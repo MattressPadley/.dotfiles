@@ -1,0 +1,15 @@
+
+2023/07/30 (12:00:30) | ===> btop++ v.1.2.13
+2023/07/30 (12:00:30) | ERROR: No response from Runner thread, quitting!
+
+2023/08/04 (11:44:51) | ===> btop++ v.1.2.13
+2023/08/04 (11:44:51) | ERROR: Exception in runner thread -> Proc:: -> basic_string::replace: __pos (which is 18446744073709551608) > this->size() (which is 0)
+
+2023/08/05 (11:39:08) | ===> btop++ v.1.2.13
+2023/08/05 (11:39:08) | ERROR: Exception in runner thread -> Proc:: -> basic_string::replace: __pos (which is 18446744073709551608) > this->size() (which is 0)
+
+2023/08/28 (17:58:42) | ===> btop++ v.1.2.13
+2023/08/28 (17:58:42) | ERROR: Exception in runner thread -> Proc:: -> basic_string::replace: __pos (which is 18446744073709551608) > this->size() (which is 0)
+
+2023/08/29 (17:55:45) | ===> btop++ v.1.2.13
+2023/08/29 (17:55:45) | ERROR: Exception in runner thread -> Proc:: -> basic_string::replace: __pos (which is 18446744073709551608) > this->size() (which is 0)
