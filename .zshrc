@@ -123,6 +123,7 @@ alias vim="nvim"
 alias pyfold="cd /Users/mhadley/Library/Mobile\ Documents/com~apple~CloudDocs/Dev/Python"
 alias py="python3"
 alias z="zed"
+alias lg="lazygit"
 
 #scripts
 alias ma3="sh ma3.sh"
