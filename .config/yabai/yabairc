@@ -46,3 +46,4 @@ yabai -m config normal_window_opacity 0.9
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Logic Pro$" manage=off
 yabai -m rule --add app="^VBAN Receptor$" manage=off
+yabai -m rule --add app="^Arc$" subrole='AXSystemDialog' manage=off mouse_follows_focus=off
