@@ -1,5 +1,5 @@
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-sudo yabai --load-sa
+#yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+#sudo yabai --load-sa
 
 yabai -m config layout bsp
 
@@ -17,7 +17,7 @@ yabai -m config window_gap     5
 yabai -m config --space 2 window_gap 0
 
 # set mouse interaction modifier key (default: fn)
-yabai -m config mouse_modifier fn
+yabai -m config mouse_modifier fn 
 
 # set modifier + left-click drag to move window (default: move)
 yabai -m config mouse_action1 move
@@ -44,3 +44,5 @@ yabai -m config normal_window_opacity 0.9
 # add 20 padding to the top and 0 padding to the bottom of every space located on the main display
 # yabai -m config external_bar main:20:0
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Logic Pro$" manage=off
+yabai -m rule --add app="^VBAN Receptor$" manage=off
