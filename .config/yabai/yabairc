@@ -45,6 +45,7 @@ yabai -m config external_bar all:20:0
 
 
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^Music$" title="^MiniPlayer%" manage=off mouse_follows_focus=off
 yabai -m rule --add app="^Logic Pro$" manage=off
 yabai -m rule --add app="^VBAN Receptor$" manage=off

@@ -13,6 +13,7 @@ _darcs
 
 \.git
 \.gitignore
+\raycast
 .gitmodules
 
 .+~          # emacs backup files
