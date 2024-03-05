@@ -13,7 +13,6 @@ _darcs
 
 \.git
 \.gitignore
-\raycast
 .gitmodules
 
 .+~          # emacs backup files
@@ -23,3 +22,6 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 .DS_Store
+
+/raycast
+/scripts

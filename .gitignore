@@ -1,2 +1,2 @@
 .DS_Store
-/zed/.tmp*
+.config/zed/.tmp*
