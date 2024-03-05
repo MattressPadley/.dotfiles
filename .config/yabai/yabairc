@@ -7,11 +7,11 @@ yabai -m config layout bsp
 yabai -m config window_placement second_child
 
 # Set all padding and gaps to 20pt (default: 0)
-yabai -m config top_padding    10
-yabai -m config bottom_padding 10
-yabai -m config left_padding   10
-yabai -m config right_padding  10
-yabai -m config window_gap     10
+yabai -m config top_padding    20
+yabai -m config bottom_padding 20
+yabai -m config left_padding   20
+yabai -m config right_padding  20
+yabai -m config window_gap     20
 
 
 # set mouse interaction modifier key (default: fn)
@@ -50,3 +50,5 @@ yabai -m rule --add app="^Music$" title="^MiniPlayer%" manage=off mouse_follows_
 yabai -m rule --add app="^Logic Pro$" manage=off
 yabai -m rule --add app="^VBAN Receptor$" manage=off
 yabai -m rule --add app="^Arc$" subrole='AXSystemDialog' manage=off mouse_follows_focus=off
+
+borders active_color=0xff89DCEB width=7.0 blur_radius=0 &
