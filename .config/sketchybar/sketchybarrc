@@ -2,20 +2,21 @@
 
 SKETCHYBAR_CONFIG="$HOME/.config/sketchybar"
 
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
 source "$CONFIG_DIR/colors.sh"
-# This is used to determine if a monitor is used
-# Since the notch is -only- on the laptop, if a monitor isn't used,
-# then that means the internal display is used ¯\_(ツ)_/¯
+
 sketchybar --bar position=top\
                  height=30 \
                  blur_radius=30 \
                  color=$TRANS_BAR_COLOR
 
-sketchybar --default icon.font="JetbrainsMono Nerd Font:regular:16.0"  \
+sketchybar --default icon.font="JetbrainsMono Nerd Font:regular:14.0"  \
                      icon.color=$WHITE                 \
-                     label.font="JetBrainsMono Nerd Font:regular:16.0" \
+                     label.font="JetBrainsMono Nerd Font:regular:14.0" \
                      label.color=$WHITE                \
-                     background.color=$ITEM_BG_COLOR    \
+                     background.color=$ITEM_BG_COLOR   \
                      background.corner_radius=5        \
                      background.height=24              \
                      padding_left=5                    \
@@ -25,10 +26,13 @@ sketchybar --default icon.font="JetbrainsMono Nerd Font:regular:16.0"  \
                      icon.padding_left=10              \
                      icon.padding_right=4
 
-
+# This is used to determine if a monitor is used
+# Since the notch is -only- on the laptop, if a monitor isn't used,
+# then that means the internal display is used ¯\_(ツ)_/¯
 MAIN_DISPLAY=$(system_profiler SPDisplaysDataType | grep -B 3 'Main Display:' | awk '/Display Type/ {print $3}')
 
-if [[ $MAIN_DISPLAY = "Built-in" ]]; then
+
+if [[ $MAIN_DISPLAY = "Built-In" ]]; then
     source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
 else
     source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"
