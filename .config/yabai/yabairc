@@ -58,4 +58,4 @@ yabai -m rule --add app="^VBAN Receptor$" manage=off
 yabai -m rule --add app="^Arc$" subrole='AXSystemDialog' manage=off mouse_follows_focus=off
 
 
-borders active_color=0xff89DCEB width=7.0 blur_radius=0 &
+borders active_color=0xff89b4fa width=7.0 blur_radius=0 &

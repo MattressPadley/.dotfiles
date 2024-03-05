@@ -20,7 +20,7 @@ ITEM_DIR="$CONFIG_DIR/items"
 sketchybar --bar position=top\
                  height=32 \
                  blur_radius=30 \
-                 color=$BAR_COLOR
+                 color=$TRANS_BAR_COLOR
 
 sketchybar --default icon.font="SF Pro:Semibold:15.0"  \
                      icon.color=$WHITE                 \
@@ -48,7 +48,7 @@ source $ITEM_DIR/calendar.sh
 source $ITEM_DIR/volume.sh
 source $ITEM_DIR/battery.sh
 source $ITEM_DIR/cpu.sh
-source $ITEM_DIR/wifi.sh
+
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to
