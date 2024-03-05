@@ -4,9 +4,13 @@ alt - w : yabai -m window --focus north
 alt - a : yabai -m window --focus west
 alt - d : yabai -m window --focus east
 
-#change focus between external displays (left and right)
-alt - q: yabai -m display --focus west
-alt - e: yabai -m display --focus east
+# change focus space (This break skhd for some reason)
+#alt - p : yabai -m space --focus prev;
+#alt - n : yabai -m space --focus next;
+
+# change focus between external displays (left and right)
+alt - q : yabai -m display --focus west
+alt - e : yabai -m display --focus east
 
 # rotate layout clockwise
 shift + alt - r : yabai -m space --rotate 270
@@ -39,12 +43,12 @@ ctrl + alt - a : yabai -m window --warp west
 ctrl + alt - d : yabai -m window --warp east
 
 # move window to display left and right
-shift + alt - q : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - e : yabai -m window --display east; yabai -m display --focus east;
+shift + alt - q : yabai -m window --display west; yabai -m display --focus west
+shift + alt - e : yabai -m window --display east; yabai -m display --focus east
 
 #move window to prev and next space
-shift + alt - p : yabai -m window --space prev;
-shift + alt - n : yabai -m window --space next;
+shift + alt - p : yabai -m window --space prev; yabai -m space --focus prev
+shift + alt - n : yabai -m window --space next; yabai -m space --focus next
 
 # move window to space #
 shift + alt - 1 : yabai -m window --space 1;
