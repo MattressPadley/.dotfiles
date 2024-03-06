@@ -8,7 +8,7 @@
 
 - sketchybar
 
-[[https://www.josean.com/posts/sketchybar-setup]]
+https://www.josean.com/posts/sketchybar-setup
 
 ```
 brew tap homebrew/cask-fonts
