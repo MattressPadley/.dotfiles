@@ -7,6 +7,10 @@ ITEM_DIR="$CONFIG_DIR/items"
 
 source "$CONFIG_DIR/colors.sh"
 
+# E V E N T S
+sketchybar -m --add event window_focus \
+              --add event title_change
+
 sketchybar --bar position=top\
                  height=30 \
                  blur_radius=30 \

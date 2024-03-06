@@ -59,3 +59,6 @@ yabai -m rule --add app="^Arc$" subrole='AXSystemDialog' manage=off mouse_follow
 
 
 borders active_color=0xff89b4fa width=7.0 blur_radius=0 &
+
+# S K E T C H Y B A R  E V E N T S
+yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger title_change &> /dev/null"
