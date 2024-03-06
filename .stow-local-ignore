@@ -23,5 +23,7 @@ _darcs
 ^/COPYING
 .DS_Store
 
+README.MD
+
 /raycast
 /scripts
