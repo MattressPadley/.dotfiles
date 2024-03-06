@@ -7,4 +7,4 @@ sketchybar --add item front_app left \
                                  label.color=$BAR_COLOR \
                                  label.max_chars=30 \
                                  script="$PLUGIN_DIR/front_app.sh"            \
-           --subscribe front_app front_app_switched title_change
+           --subscribe front_app front_app_switched title_change window_focus
