@@ -1,10 +1,13 @@
 ## Used Apps
 
+- Stow
 - Yabai
 - skhd
+- raycast
 
 
 - sketchybar
+
 [[https://www.josean.com/posts/sketchybar-setup]]
 
 ```
