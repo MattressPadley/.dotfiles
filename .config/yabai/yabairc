@@ -44,19 +44,16 @@ yabai -m config normal_window_opacity 0.9
 # add 20 padding to the top and 0 padding to the bottom of every space located on the main display
 yabai -m config external_bar all:20:0
 
-
-
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^app_gma3$" manage=off
 yabai -m rule --add app="^grandMA3$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^Adobe Lightroom$" opacity=1.0
-yabai -m rule --add app="^Music$" title="^MiniPlayer%" manage=on mouse_follows_focus=off
+yabai -m rule --add app="^Music$" title="^MiniPlayer$" manage=on mouse_follows_focus=off
 yabai -m rule --add app="^Music$" manage=on
 yabai -m rule --add app="^Logic Pro$" manage=off
 yabai -m rule --add app="^VBAN Receptor$" manage=off
-yabai -m rule --add app="^Arc$" subrole='AXSystemDialog' manage=off mouse_follows_focus=off
-
+yabai -m rule --add app="^Arc$" subrole="^AXSystemDialog$" manage=off mouse_follows_focus=off
 
 borders active_color=0xff89b4fa width=7.0 blur_radius=0 &
 
