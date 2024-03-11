@@ -1,5 +1,6 @@
 
 
+
 ### START-OF-ICON-MAP
 function __icon_map() {
     case "$1" in
@@ -278,6 +279,9 @@ function __icon_map() {
         ;;
    "网易云音乐")
         icon_result=":netease_music:"
+        ;;
+   "Noodl" | "Noodl Editor")
+        icon_result=":noodl:"
         ;;
    "NordVPN")
         icon_result=":nord_vpn:"
