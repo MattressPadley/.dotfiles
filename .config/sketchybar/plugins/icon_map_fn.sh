@@ -2,6 +2,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### START-OF-ICON-MAP
 function __icon_map() {
     case "$1" in
@@ -97,6 +110,9 @@ function __icon_map() {
         ;;
    "Cypress")
         icon_result=":cypress:"
+        ;;
+   "DaVinci Resolve")
+        icon_result=":davinciresolve:"
         ;;
    "Default")
         icon_result=":default:"
@@ -221,8 +237,17 @@ function __icon_map() {
    "LibreWolf")
         icon_result=":libre_wolf:"
         ;;
+   "Adobe Lightroom")
+        icon_result=":lightroom:"
+        ;;
+   "Lightroom Classic")
+        icon_result=":lightroomclassic:"
+        ;;
    "Linear")
         icon_result=":linear:"
+        ;;
+   "Logic Pro")
+        icon_result=":logicpro:"
         ;;
    "Logseq")
         icon_result=":logseq:"
@@ -269,6 +294,9 @@ function __icon_map() {
    "Miro")
         icon_result=":miro:"
         ;;
+   "MongoDB Compass 1.42.0")
+        icon_result=":mongodb:"
+        ;;
    "mpv")
         icon_result=":mpv:"
         ;;
@@ -314,6 +342,9 @@ function __icon_map() {
    "1Password")
         icon_result=":one_password:"
         ;;
+   "ChatGPT")
+        icon_result=":openai:"
+        ;;
    "Orion" | "Orion RC")
         icon_result=":orion:"
         ;;
@@ -325,6 +356,9 @@ function __icon_map() {
         ;;
    "Preview" | "预览" | "Skim" | "zathura")
         icon_result=":pdf:"
+        ;;
+   "Adobe Photoshop 2024")
+        icon_result=":photoshop:"
         ;;
    "Pi-hole Remote")
         icon_result=":pihole:"
