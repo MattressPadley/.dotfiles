@@ -7,7 +7,7 @@ alt - a : yabai -m window --focus west
 alt - d : yabai -m window --focus east
 
 # change focus space (This break skhd for some reason)
-#alt - p : yabai -m space --focus prev;
+#alt - p : yabai -m space --focus prev;
 #alt - n : yabai -m space --focus next;
 
 # change focus between external displays (left and right)
