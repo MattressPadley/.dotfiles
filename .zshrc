@@ -113,7 +113,8 @@ compinit
 # End of lines added by compinstall
 
 
-PATH="$PATH:~/dotfiles/scripts"
+PATH="$PATH:~/.dotfiles/scripts"
+
 
 # command changes or abbreviations
 alias pip="pip3"
@@ -129,7 +130,7 @@ alias home="cd ~"
 
 #scripts
 alias ma3="sh ma3.sh"
-alias upconf="sh dotfiles-update.sh"
+alias upconf="zsh ~/.dotfiles/scripts/dotfiles-update.sh"
 alias sophie="ssh mhadley@sophie.mattresspad.link"
 alias totoro="ssh mhadley@totoro.mattresspad.link"
 alias log="sh log.sh"
