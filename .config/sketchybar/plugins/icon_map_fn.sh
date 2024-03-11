@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 ### START-OF-ICON-MAP
 function __icon_map() {
     case "$1" in
@@ -189,7 +191,7 @@ function __icon_map() {
    "Iris")
         icon_result=":iris:"
         ;;
-   "iTerm")
+   "iTerm" | "iTerm2")
         icon_result=":iterm:"
         ;;
    "Jellyfin Media Player")
@@ -279,7 +281,7 @@ function __icon_map() {
    "Miro")
         icon_result=":miro:"
         ;;
-   "MongoDB Compass 1.42.0")
+   "MongoDB Compass"*)
         icon_result=":mongodb:"
         ;;
    "mpv")
@@ -342,7 +344,7 @@ function __icon_map() {
    "Preview" | "预览" | "Skim" | "zathura")
         icon_result=":pdf:"
         ;;
-   "Adobe Photoshop 2024")
+   "Adobe Photoshop"*)
         icon_result=":photoshop:"
         ;;
    "Pi-hole Remote")
@@ -492,7 +494,7 @@ function __icon_map() {
    "WezTerm")
         icon_result=":wezterm:"
         ;;
-   "WhatsApp" | "WhatsApp")
+   "WhatsApp" | "‎WhatsApp")
         icon_result=":whats_app:"
         ;;
    "Xcode")
