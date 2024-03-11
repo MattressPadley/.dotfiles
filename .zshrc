@@ -124,6 +124,7 @@ alias pyfold="cd /Users/mhadley/Library/Mobile\ Documents/com~apple~CloudDocs/De
 alias py="python3"
 alias z="zed"
 alias lg="lazygit"
+alias home="cd ~"
 
 #scripts
 alias ma3="sh ma3.sh"
