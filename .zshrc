@@ -113,7 +113,7 @@ compinit
 # End of lines added by compinstall
 
 
-PATH="$PATH:~/scripts"
+PATH="$PATH:~/dotfiles/scripts"
 
 # command changes or abbreviations
 alias pip="pip3"
@@ -126,13 +126,14 @@ alias z="zed"
 alias lg="lazygit"
 alias home="cd ~"
 
+
 #scripts
 alias ma3="sh ma3.sh"
+alias upconf="sh dotfiles-update.sh"
 alias sophie="ssh mhadley@sophie.mattresspad.link"
 alias totoro="ssh mhadley@totoro.mattresspad.link"
-alias ohelp="sh obsidian-help-ssh.sh"
 alias log="sh log.sh"
-alias sendconf="sh sendconf.sh"
+
 
 
 export PATH="/Users/mhadley/.local/bin:$PATH"
