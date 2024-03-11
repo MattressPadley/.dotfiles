@@ -1,19 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#!/bin/bash
 
 ### START-OF-ICON-MAP
 function __icon_map() {
@@ -507,7 +492,7 @@ function __icon_map() {
    "WezTerm")
         icon_result=":wezterm:"
         ;;
-   "WhatsApp" | "‎WhatsApp")
+   "WhatsApp" | "WhatsApp")
         icon_result=":whats_app:"
         ;;
    "Xcode")
