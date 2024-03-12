@@ -28,7 +28,8 @@ sketchybar --default icon.font="JetbrainsMono Nerd Font:regular:14.0"  \
                      label.padding_left=4              \
                      label.padding_right=10            \
                      icon.padding_left=10              \
-                     icon.padding_right=4
+                     icon.padding_right=4\
+                     
 
 # This is used to determine if a monitor is used
 # Since the notch is -only- on the laptop, if a monitor isn't used,

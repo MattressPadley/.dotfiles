@@ -22,5 +22,5 @@ if [ "$SENDER" = "space_windows_change" ]; then
     icon_strip=" —"
   fi
 
-  sketchybar --set space.$space label="$icon_strip"
+  sketchybar --animate sin 10 --set space.$space label="$icon_strip"
 fi
