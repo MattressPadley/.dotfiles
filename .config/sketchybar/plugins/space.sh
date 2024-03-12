@@ -4,16 +4,16 @@ update() {
   source "$CONFIG_DIR/colors.sh"
   if [ $SELECTED = true ]; then
     sketchybar --set $NAME background.drawing=on \
-                          background.color=$ACCENT_COLOR \
-                          label.color=$BAR_COLOR \
-                          icon.color=$BAR_COLOR
+                          background.color=$HIGHLIGHT_COLOR \
+                          label.color=$LABEL_HIGHLIGHT_COLOR \
+                          icon.color=$ICON_HIGHLIGHT_COLOR
   else
     sketchybar --set $NAME background.drawing=on \
-                          label.color=$ACCENT_COLOR \
-                          icon.color=$ACCENT_COLOR\
-                          background.border_color=$ACCENT_COLOR\
-                          background.border_width=1\
-                          background.color=$ITEM_BG_COLOR
+                          label.color=$LABEL_COLOR \
+                          icon.color=$ICON_COLOR\
+                          background.border_color=$HIGHLIGHT_COLOR\
+                          background.color=$BACKGROUND_1\
+                          background.border_width=1
   fi
 }
 

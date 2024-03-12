@@ -2,21 +2,12 @@
 
 source "$CONFIG_DIR/colors.sh"
 
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
-# For a (much) more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
 
-
-##### Bar Appearance #####
-# Configuring the general appearance of the bar.
-# These are only some of the options available. For all options see:
-# https://felixkratz.github.io/SketchyBar/config/bar
-# If you are looking for other colors, see the color picker:
-# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 # -- Left Side Items --
+source "$ITEM_DIR/apple.sh"
 source $ITEM_DIR/spaces.sh
+source $ITEM_DIR/yabai.sh
 source $ITEM_DIR/front_app.sh
 
 # -- Right Side Of Notch Items --
@@ -24,6 +15,7 @@ source $ITEM_DIR/media.sh
 
 # --- Right Side Items ---
 source $ITEM_DIR/calendar.sh
+source "$ITEM_DIR/github.sh"
 source $ITEM_DIR/volume.sh
 source $ITEM_DIR/battery.sh
 source $ITEM_DIR/cpu.sh
