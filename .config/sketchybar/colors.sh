@@ -1,5 +1,4 @@
 #!/bin/bash
-export WHITE=0xffcdd6f4
 
 # -- Teal Scheme --
 export TRANS_BAR_COLOR=0x4B313244
