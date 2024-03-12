@@ -38,7 +38,7 @@ export TRANSPARENT=0x00000000
 
 # General bar colors
 export BAR_COLOR=$TRANS_BAR_COLOR
-export BAR_BORDER_COLOR=$SKY
+export BAR_BORDER_COLOR=$BLUE
 export BACKGROUND_2=$SURFACE0      
 export BACKGROUND_1=$TRANSPARENT
 export ICON_COLOR=$HIGHLIGHT_COLOR # Color of all icons
