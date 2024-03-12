@@ -7,29 +7,57 @@ ITEM_DIR="$CONFIG_DIR/items"
 
 source "$CONFIG_DIR/colors.sh"
 
+FONT="JetbrainsMono Nerd Font" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+PADDINGS=3 # All paddings use this value (icon, label, background)
+
+# Setting up the general bar appearance of the bar
+bar=(
+  height=35
+  color=$TRANS_BAR_COLOR
+  border_width=0
+  border_color=$BAR_BORDER_COLOR
+  blur_radius=20
+  shadow=off
+  position=top
+  sticky=on
+  padding_right=10
+  padding_left=10
+  y_offset=-5
+  margin=-2
+  topmost=window
+)
+sketchybar --bar "${bar[@]}"
+
+# Setting up default values
+defaults=(
+  updates=when_shown
+  icon.font="$FONT:Bold:14.0"
+  icon.color=$ICON_COLOR
+  icon.padding_left=$PADDINGS
+  icon.padding_right=$PADDINGS
+  label.font="$FONT:Semibold:13.0"
+  label.color=$LABEL_COLOR
+  label.padding_left=$PADDINGS
+  label.padding_right=$PADDINGS
+  padding_right=$PADDINGS
+  padding_left=$PADDINGS
+  background.height=26
+  background.corner_radius=5
+  background.border_width=1
+  popup.background.border_width=2
+  popup.background.corner_radius=9
+  popup.background.border_color=$POPUP_BORDER_COLOR
+  popup.background.color=$POPUP_BACKGROUND_COLOR
+  popup.blur_radius=20
+  popup.background.shadow.drawing=on
+  scroll_texts=off
+)
+
+sketchybar --default "${defaults[@]}"
+
 # E V E N T S
 sketchybar -m --add event window_focus \
               --add event title_change
-
-sketchybar --bar position=top\
-                 height=30 \
-                 blur_radius=30 \
-                 color=$TRANS_BAR_COLOR
-
-sketchybar --default icon.font="JetbrainsMono Nerd Font:regular:14.0"  \
-                     icon.color=$WHITE                 \
-                     label.font="JetBrainsMono Nerd Font:regular:14.0" \
-                     label.color=$WHITE                \
-                     background.color=$ITEM_BG_COLOR   \
-                     background.corner_radius=5        \
-                     background.height=24              \
-                     padding_left=5                    \
-                     padding_right=5                   \
-                     label.padding_left=4              \
-                     label.padding_right=10            \
-                     icon.padding_left=10              \
-                     icon.padding_right=4\
-                     
 
 # This is used to determine if a monitor is used
 # Since the notch is -only- on the laptop, if a monitor isn't used,
