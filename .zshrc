@@ -126,6 +126,7 @@ alias py="python3"
 alias z="zed"
 alias lg="lazygit"
 alias home="cd ~"
+alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 
 
 #scripts
