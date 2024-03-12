@@ -54,13 +54,20 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^app_gma3$" manage=on
 yabai -m rule --add app="^grandMA3$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
-yabai -m rule --add app="^Logic Pro$" manage=off
+yabai -m rule --add app="^Logic Pro$" manage=on
 yabai -m rule --add app="^VBAN Receptor$" manage=off
 
 
 # Not Tranparent
 yabai -m rule --add app="^Noodl Editor$" opacity=1.0
 yabai -m rule --add app="^Adobe Lightroom$" opacity=1.0
+
+
+yabai -m rule --add app="^Adobe Photoshop 2024$" opacity=1.0
+yabai -m rule --add app="^Lightroom Classic$" opacity=1.0
+yabai -m rule --add app="^DaVinci Resolve$" opacity=1.0
+
+
 
 # Float by Default
 yabai -m rule --add app="^Messages$" manage=off
