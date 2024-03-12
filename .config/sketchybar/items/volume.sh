@@ -11,7 +11,7 @@ volume_slider=(
   slider.highlight_color=$ICON_COLOR
   slider.background.height=15
   slider.background.corner_radius=4
-  slider.background.color=$MANTLE
+  slider.background.color=$BACKGROUND_2
   slider.background.padding_right=20
   slider.knob=􀟐
   slider.knob.color=$ICON_COLOR
@@ -22,13 +22,14 @@ volume_icon=(
   click_script="$PLUGIN_DIR/volume_click.sh"
   padding_left=5
   icon=$VOLUME_100
+  icon.width=0
   icon.align=left
   icon.color=$ICON_COLOR
   icon.font="$FONT:Regular:14.0"
+  label.width=25
   label.align=left
   label.color=$LABEL_COLOR
   label.font="$FONT:Regular:14.0"
-  background.color=$BACKGROUND_1
 )
 
 status_bracket=(

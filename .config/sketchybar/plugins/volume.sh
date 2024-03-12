@@ -44,4 +44,4 @@ case "$SENDER" in
   ;;
   "mouse.clicked") mouse_clicked
   ;;
-esac1
+esac

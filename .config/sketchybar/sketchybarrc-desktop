@@ -4,6 +4,7 @@ source "$CONFIG_DIR/colors.sh"
 
 
 # -- Left Side Items --
+source "$ITEM_DIR/apple.sh"
 source $ITEM_DIR/spaces.sh
 source $ITEM_DIR/yabai.sh
 source $ITEM_DIR/front_app.sh
