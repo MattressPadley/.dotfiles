@@ -12,12 +12,12 @@ sketchybar --add item        cpu.top right                 \
            --set cpu.percent label.font="$FONT:Bold:12"   \
                              label=CPU                     \
                              y_offset=-4                   \
-                             width=40                      \
+                             width=30                      \
                              icon.drawing=off              \
                              update_freq=2                 \
                              background.padding_right=10   \
                                                            \
-           --add graph       cpu.sys right 100             \
+           --add graph       cpu.sys right 50             \
            --set cpu.sys     width=0                       \
                              graph.color=$RED              \
                              graph.fill_color=$RED         \
@@ -25,7 +25,7 @@ sketchybar --add item        cpu.top right                 \
                              icon.drawing=off              \
                              background.padding_right=10   \
                                                            \
-           --add graph       cpu.user right 100            \
+           --add graph       cpu.user right 50            \
            --set cpu.user    graph.color=$BLUE             \
                              update_freq=2                 \
                              label.drawing=off             \
