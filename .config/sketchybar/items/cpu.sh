@@ -7,6 +7,7 @@ sketchybar --add item        cpu.top right                 \
                              width=0                       \
                              y_offset=6                    \
                              background.padding_right=10   \
+                             display=1                     \
                                                            \
            --add item        cpu.percent right             \
            --set cpu.percent label.font="$FONT:Bold:12"   \
@@ -14,6 +15,7 @@ sketchybar --add item        cpu.top right                 \
                              y_offset=-4                   \
                              width=30                      \
                              icon.drawing=off              \
+                             display=1                     \
                              update_freq=2                 \
                              background.padding_right=10   \
                                                            \
@@ -23,12 +25,14 @@ sketchybar --add item        cpu.top right                 \
                              graph.fill_color=$RED         \
                              label.drawing=off             \
                              icon.drawing=off              \
+                             display=1                     \
                              background.padding_right=10   \
                                                            \
            --add graph       cpu.user right 50            \
            --set cpu.user    graph.color=$BLUE             \
                              update_freq=2                 \
                              label.drawing=off             \
+                             display=1                     \
                              icon.drawing=off              \
                              background.padding_right=10   \
                              script="$PLUGIN_DIR/cpu.sh"

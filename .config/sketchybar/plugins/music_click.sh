@@ -3,10 +3,10 @@
 tell application "Music"
     if favorited of current track is true then
         set favorited of current track to false
-        do shell script "sketchybar -m --set music_liked icon=􀊴"
+        do shell script "sketchybar -m --set music_liked icon=􀋂"
       else
         set favorited of current track to true
-        do shell script "sketchybar -m --set music_liked icon=􀊵"
+        do shell script "sketchybar -m --set music_liked icon=􀋃"
     end if
 end tell
 
