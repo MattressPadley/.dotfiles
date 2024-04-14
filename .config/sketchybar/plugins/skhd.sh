@@ -17,6 +17,9 @@ skhd_mode() {
         "Focus")
             COLOR=$SKHD_FOCUS
             ;;
+        "Restart")
+            COLOR=$SKHD_RESTART
+            ;;
         *)
             COLOR=""
             ;;
@@ -26,14 +29,10 @@ skhd_mode() {
 
     args=(--bar border_color=$COLOR \
           --animate sin 10 \
-          --set $NAME icon.color=$COLOR \
           --set $NAME background.color=$COLOR)
 
     [ -z "$LABEL" ] && args+=(label.width=0) \
                     || args+=(label="$LABEL" label.width=dynamic)
-
-    [ -z "$ICON" ] && args+=(icon.width=0) \
-                    || args+=(icon="$ICON" icon.width=dynamic)
 
     sketchybar -m "${args[@]}"
 }

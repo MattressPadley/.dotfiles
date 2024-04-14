@@ -1,26 +1,21 @@
 #!/bin/bash
 
-# stop/start/restart yabai
-ctrl + alt - q : yabai --stop-service
-ctrl + alt - s : yabai --start-service
-ctrl + alt - r : yabai --restart-service; skhd --restart-service
-ctrl + alt - t : yabai -m window --scratchpad recover
-
-
 # Modes
 :: default : borders active_color=0xff89b4fa ; sketchybar --trigger skhd_mode MODE=Default
 :: active @ : borders active_color=0xffcdd6f4 ; sketchybar --trigger skhd_mode MODE=Active
-:: scratchpad @ : borders active_color=0xffb4befe ; sketchybar --trigger skhd_mode MODE=Scratchpad
+:: scratchpad @ : borders active_color=0xffcba6f7 ; sketchybar --trigger skhd_mode MODE=Scratchpad
 :: focus @ : borders active_color=0xff89dceb ; sketchybar --trigger skhd_mode MODE=Focus
 :: move @ : borders active_color=0xffeba0ac ; sketchybar --trigger skhd_mode MODE=Move
+:: restart @ : borders active_color=0xfff9e2af ; sketchybar --trigger skhd_mode MODE=Restart
 
 # Mode shifting
 default < alt - f ; focus
 default < alt - s ; scratchpad
 default < alt - m ; move
+default < alt - r ; restart
 
-scratchpad, focus, active, move < escape ; default
-scratchpad, focus, active, move < return ; default
+scratchpad, focus, active, move, restart < escape ; default
+scratchpad, focus, active, move, restart < return ; default
 
 # change window focus within space
 focus < s : yabai -m window --focus south
@@ -81,10 +76,13 @@ ctrl + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2; sketchybar -
 # maximize a window
 ctrl + alt - m : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
 
+#Scratchpads
 scratchpad < t : yabai -m window --toggle kitty || open  -a kitty ; skhd -k 'escape'
 scratchpad < m : yabai -m window --toggle music || open  -a Music ; skhd -k 'escape'
 scratchpad < o : yabai -m window --toggle obsidian || open  -a Obsidian ; skhd -k 'escape'
 scratchpad < d : yabai -m window --toggle discord || open  -a Discord ; skhd -k 'escape'
 
-
-
+# Restart Service
+restart < y : skhd -k 'escape' ; yabai --restart-service
+restart < s : skhd -k 'escape' ; skhd --restart-service 
+restart < k : skhd -k 'escape' ; brew services restart sketchybar
