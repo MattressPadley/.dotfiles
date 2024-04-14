@@ -80,4 +80,10 @@ alt - 9 : yabai -m space --focus 9;
 # stop/start/restart yabai
 ctrl + alt - q : yabai --stop-service
 ctrl + alt - s : yabai --start-service
-ctrl + alt - r : yabai --restart-service; skhd --restart-service
+ctrl + alt - r : yabai --restart-service; skhd --restart-service;  yabai -m window --scratchpad recover
+
+
+# Scratchpad
+alt - m : yabai -m window --toggle music || open  -a Music
+alt - t : yabai -m window --toggle kitty || open  -a kitty
+
