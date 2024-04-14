@@ -20,7 +20,7 @@ default < alt - s ; scratchpad
 default < alt - m ; move
 
 scratchpad, focus, active, move < escape ; default
-
+scratchpad, focus, active, move < return ; default
 
 # change window focus within space
 focus < s : yabai -m window --focus south
