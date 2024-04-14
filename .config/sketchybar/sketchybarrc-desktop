@@ -10,6 +10,7 @@ source "$ITEM_DIR/yabai.sh"
 source "$ITEM_DIR/front_app.sh"
 
 # -- Right Side Of Notch Items --
+source "$ITEM_DIR/skhd.sh"
 source "$ITEM_DIR/media.sh"
 
 # --- Right Side Items ---
@@ -21,7 +22,7 @@ source "$ITEM_DIR/disk.sh"
 source "$ITEM_DIR/ram.sh"
 source "$ITEM_DIR/network.sh"
 #source "$ITEM_DIR/wifi.sh"
-# source "$ITEM_DIR/control_center.sh"
+#source "$ITEM_DIR/control_center.sh"
 
 
 ##### Finalizing Setup #####

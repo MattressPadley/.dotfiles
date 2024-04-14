@@ -8,11 +8,11 @@ ctrl + alt - t : yabai -m window --scratchpad recover
 
 
 # Modes
-:: default : borders active_color=0xff89b4fa
-:: active @ : borders active_color=0xffcdd6f4
-:: scratchpad @ : borders active_color=0xffb4befe
-:: focus @ : borders active_color=0xff89dceb
-:: move @ : borders active_color=0xffeba0ac
+:: default : borders active_color=0xff89b4fa ; sketchybar --trigger skhd_mode MODE=Default
+:: active @ : borders active_color=0xffcdd6f4 ; sketchybar --trigger skhd_mode MODE=Active
+:: scratchpad @ : borders active_color=0xffb4befe ; sketchybar --trigger skhd_mode MODE=Scratchpad
+:: focus @ : borders active_color=0xff89dceb ; sketchybar --trigger skhd_mode MODE=Focus
+:: move @ : borders active_color=0xffeba0ac ; sketchybar --trigger skhd_mode MODE=Move
 
 # Mode shifting
 default < alt - f ; focus
