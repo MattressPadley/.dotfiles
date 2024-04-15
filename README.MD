@@ -18,6 +18,7 @@ brew services start sketchybar
 brew install font-sf-pro
 brew install --cask sf-symbols
 brew install ifstat
+brew install --cask karabiner-elements
 ```
 
 Run the following command to install the sketchybar-app-font:
