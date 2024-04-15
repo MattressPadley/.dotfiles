@@ -80,6 +80,7 @@ yabai -m rule --add app="^Music$" title="^MiniPlayer$" scratchpad=music grid=11:
 yabai -m rule --add app="^kitty$" scratchpad=kitty grid=11:11:4:1:6:9
 yabai -m rule --add app="^Discord$" scratchpad=discord grid=11:11:4:1:6:9
 yabai -m rule --add app="^Obsidian$" scratchpad=obsidian grid=11:11:1:1:9:9
+yabai -m rule --add app="^Messages$" scratchpad=messages grid=11:11:1:1:9:9
 
 # yabai -m rule --add app="^Music$" title="^MiniPlayer$" manage=on
 #yabai -m rule --add app="^Music$" manage=on

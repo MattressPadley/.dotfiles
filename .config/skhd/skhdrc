@@ -85,6 +85,7 @@ scratchpad < t : yabai -m window --toggle kitty || open  -a kitty ; skhd -k 'esc
 scratchpad < m : yabai -m window --toggle music || open  -a Music ; skhd -k 'escape'
 scratchpad < o : yabai -m window --toggle obsidian || open  -a Obsidian ; skhd -k 'escape'
 scratchpad < d : yabai -m window --toggle discord || open  -a Discord ; skhd -k 'escape'
+scratchpad < i : yabai -m window --toggle messages || open  -a Messages ; skhd -k 'escape'
 
 # Apps
 app < a : skhd -k 'escape' ; open -a 'Arc'
