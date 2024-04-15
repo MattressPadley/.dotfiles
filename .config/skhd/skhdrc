@@ -2,17 +2,18 @@
 
 # Modes
 :: default : borders active_color=0xff89b4fa ; sketchybar --trigger skhd_mode MODE=Default
-:: active @ : borders active_color=0xffcdd6f4 ; sketchybar --trigger skhd_mode MODE=Active
+:: active @ : borders active_color=0xffcdd6f4 ;
 :: scratchpad @ : borders active_color=0xffcba6f7 ; sketchybar --trigger skhd_mode MODE=Scratchpad
 :: window @ : borders active_color=0xff89dceb ; sketchybar --trigger skhd_mode MODE=Window
 :: restart @ : borders active_color=0xfff9e2af ; sketchybar --trigger skhd_mode MODE=Restart
 :: app @ : borders active_color=0xffa6e3a1 ; sketchybar --trigger skhd_mode MODE=App
 
 # Mode shifting
-default < alt - w ; window
-default < alt - s ; scratchpad
-default < alt - r ; restart
-default < alt - a ; app
+default < f19 ; active
+active < w ; window
+active < s ; scratchpad
+active < r ; restart
+active < a ; app
 
 scratchpad, window, active, restart, app < escape ; default
 scratchpad, window, active, restart, app < return ; default
@@ -75,7 +76,7 @@ window < shift - 0 : yabai -m window --space 10;
 window < backspace : osascript -e 'tell application "System Events" to perform action "AXPress" of (first button whose subrole is "AXCloseButton") of (first window whose subrole is "AXStandardWindow") of (first process whose frontmost is true)'
 
 # toggle window float
-ctrl + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2; sketchybar --trigger window_focus
+window < f : yabai -m window --toggle float; sketchybar --trigger window_focus
 
 # maximize a window
 ctrl + alt - m : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
