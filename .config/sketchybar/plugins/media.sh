@@ -15,4 +15,5 @@ update_media() {
 case "$SENDER" in
   "media_change") update_media
   ;;
+  "song_update") update_media
 esac

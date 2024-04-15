@@ -11,7 +11,6 @@ media=(
 )
 
 music_liked=(
-    icon=
     script="$PLUGIN_DIR/music.sh"
     click_script="$PLUGIN_DIR/music_click.sh"
     updates=on
@@ -24,4 +23,4 @@ sketchybar --add item media center \
 sketchybar -m --add event song_update com.apple.iTunes.playerInfo
 sketchybar --add item music_liked center \
            --set music_liked "${music_liked[@]}"\
-           --subscribe music_liked media_change
+           --subscribe music_liked media_change song_update
