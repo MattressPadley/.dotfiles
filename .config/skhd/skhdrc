@@ -95,6 +95,7 @@ app < l : skhd -k 'escape' ; open -a 'Adobe Lightroom'
 app < m : skhd -k 'escape' ; open -a 'Canary Mail'
 app < p : skhd -k 'escape' ; open -a 'Adobe Photoshop'
 app < r : skhd -k 'escape' ; open -a 'DaVinci Resolve'
+app < v : skhd -k 'escape' ; open -a 'Visual Studio Code'
 
 # Restart Service
 restart < y : skhd -k 'escape' ; yabai --restart-service
