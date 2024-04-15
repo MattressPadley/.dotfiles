@@ -1,8 +1,8 @@
 #!/bin/bash
 
-defaults write com.apple.dock autohide -bool true && killall Dock
-defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
-defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
+# defaults write com.apple.dock autohide -bool true && killall Dock
+# defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
+# defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
 
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
@@ -62,6 +62,8 @@ yabai -m rule --add app="^Logic Pro$" manage=on
 yabai -m rule --add app="^VBAN Receptor$" manage=off
 yabai -m rule --add app="^Unreal Editor$" manage=off
 yabai -m rule --add app="^Python$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --add app="^Finder$" title="^Copy$" manage=off
 
 
 # Not Tranparent
