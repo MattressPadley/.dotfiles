@@ -97,6 +97,9 @@ app < p : skhd -k 'escape' ; open -a 'Adobe Photoshop'
 app < r : skhd -k 'escape' ; open -a 'DaVinci Resolve'
 app < v : skhd -k 'escape' ; open -a 'Visual Studio Code'
 
+# Quit App
+app < backspace : skhd -k 'escape' ; osascript -e 'tell application "System Events" to keystroke "q" using {command down}'
+
 # Restart Service
 restart < y : skhd -k 'escape' ; yabai --restart-service
 restart < s : skhd -k 'escape' ; skhd --restart-service 
