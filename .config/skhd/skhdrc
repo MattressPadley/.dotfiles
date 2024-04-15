@@ -2,7 +2,7 @@
 
 # Modes
 :: default : borders active_color=0xff89b4fa ; sketchybar --trigger skhd_mode MODE=Default
-:: active @ : borders active_color=0xffcdd6f4 ;
+:: active @ : borders active_color=0xffcdd6f4 ; sketchybar --trigger skhd_mode MODE=Active
 :: scratchpad @ : borders active_color=0xffcba6f7 ; sketchybar --trigger skhd_mode MODE=Scratchpad
 :: window @ : borders active_color=0xff89dceb ; sketchybar --trigger skhd_mode MODE=Window
 :: restart @ : borders active_color=0xfff9e2af ; sketchybar --trigger skhd_mode MODE=Restart
@@ -17,6 +17,7 @@ active < a ; app
 
 scratchpad, window, active, restart, app < escape ; default
 scratchpad, window, active, restart, app < return ; default
+scratchpad, window, active, restart, app < f19 ; active
 
 # change window focus within space
 window < s : yabai -m window --focus south
