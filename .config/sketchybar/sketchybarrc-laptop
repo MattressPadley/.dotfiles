@@ -11,6 +11,7 @@ source "$ITEM_DIR/yabai.sh"
 source "$ITEM_DIR/front_app.sh"
 
 # -- Right Side Of Notch Items --
+source "$ITEM_DIR/skhd.sh"
 source "$ITEM_DIR/media.sh"
 
 # --- Right Side Items ---
