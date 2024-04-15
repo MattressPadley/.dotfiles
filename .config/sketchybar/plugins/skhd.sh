@@ -8,14 +8,11 @@ skhd_mode() {
         "Default")
             COLOR=$SKHD_DEFAULT
             ;;
-        "Move")
-            COLOR=$SKHD_MOVE
-            ;;
         "Scratchpad")
             COLOR=$SKHD_SCRATCHPAD
             ;;
-        "Focus")
-            COLOR=$SKHD_FOCUS
+        "Window")
+            COLOR=$SKHD_WINDOW
             ;;
         "Restart")
             COLOR=$SKHD_RESTART

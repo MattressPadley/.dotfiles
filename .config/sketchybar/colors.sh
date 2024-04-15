@@ -52,7 +52,6 @@ export SHADOW_COLOR=$BLACK
 
 # SKHD mode colors
 export SKHD_DEFAULT=$BLUE
-export SKHD_MOVE=$RED
 export SKHD_SCRATCHPAD=$MAUVE
-export SKHD_FOCUS=$SKY
+export SKHD_WINDOW=$SKY
 export SKHD_RESTART=$YELLOW
