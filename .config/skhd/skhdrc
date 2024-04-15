@@ -6,14 +6,16 @@
 :: scratchpad @ : borders active_color=0xffcba6f7 ; sketchybar --trigger skhd_mode MODE=Scratchpad
 :: window @ : borders active_color=0xff89dceb ; sketchybar --trigger skhd_mode MODE=Window
 :: restart @ : borders active_color=0xfff9e2af ; sketchybar --trigger skhd_mode MODE=Restart
+:: app @ : borders active_color=0xffa6e3a1 ; sketchybar --trigger skhd_mode MODE=App
 
 # Mode shifting
 default < alt - w ; window
 default < alt - s ; scratchpad
 default < alt - r ; restart
+default < alt - a ; app
 
-scratchpad, window, active, restart < escape ; default
-scratchpad, window, active, restart < return ; default
+scratchpad, window, active, restart, app < escape ; default
+scratchpad, window, active, restart, app < return ; default
 
 # change window focus within space
 window < s : yabai -m window --focus south
@@ -83,6 +85,16 @@ scratchpad < t : yabai -m window --toggle kitty || open  -a kitty ; skhd -k 'esc
 scratchpad < m : yabai -m window --toggle music || open  -a Music ; skhd -k 'escape'
 scratchpad < o : yabai -m window --toggle obsidian || open  -a Obsidian ; skhd -k 'escape'
 scratchpad < d : yabai -m window --toggle discord || open  -a Discord ; skhd -k 'escape'
+
+# Apps
+app < a : skhd -k 'escape' ; open -a 'Arc'
+app < c : skhd -k 'escape' ; open -a 'ChatGPT'
+app < d : skhd -k 'escape' ; open -a 'Logic Pro X'
+app < f : skhd -k 'escape' ; open -a 'Finder'
+app < l : skhd -k 'escape' ; open -a 'Adobe Lightroom'
+app < m : skhd -k 'escape' ; open -a 'Canary Mail'
+app < p : skhd -k 'escape' ; open -a 'Adobe Photoshop'
+app < r : skhd -k 'escape' ; open -a 'DaVinci Resolve'
 
 # Restart Service
 restart < y : skhd -k 'escape' ; yabai --restart-service

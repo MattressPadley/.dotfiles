@@ -17,6 +17,9 @@ skhd_mode() {
         "Restart")
             COLOR=$SKHD_RESTART
             ;;
+        "App")
+            COLOR=$SKHD_APP
+            ;;
         *)
             COLOR=""
             ;;
