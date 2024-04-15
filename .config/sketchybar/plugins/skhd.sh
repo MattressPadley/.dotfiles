@@ -25,7 +25,11 @@ skhd_mode() {
             ;;
     esac
     ICON=""
-    [ "$MODE" = "Default" ] && LABEL="" || LABEL="$MODE"
+    if [ "$MODE" = "Default" ] || [ "$MODE" = "Active" ]; then
+        LABEL=""
+    else
+        LABEL="$MODE"
+    fi
 
     args=(--bar border_color=$COLOR \
           --animate sin 10 \
