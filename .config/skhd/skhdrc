@@ -15,6 +15,9 @@ active < s ; scratchpad
 active < r ; restart
 active < a ; app
 
+# Sleep Display
+active < l : skhd -k 'escape' ; pmset displaysleepnow
+
 scratchpad, window, active, restart, app < escape ; default
 scratchpad, window, active, restart, app < return ; default
 scratchpad, window, active, restart, app < f19 ; active
