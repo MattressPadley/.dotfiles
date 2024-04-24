@@ -86,7 +86,7 @@ window < f : yabai -m window --toggle float; sketchybar --trigger window_focus
 ctrl + alt - m : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
 
 #Scratchpads
-scratchpad < t : yabai -m window --toggle kitty || open  -a kitty ; skhd -k 'escape'
+scratchpad < t : yabai -m window --toggle kitty || kitty --title=Scratchpad ; skhd -k 'escape'
 scratchpad < m : yabai -m window --toggle music || open  -a Music ; skhd -k 'escape'
 scratchpad < o : yabai -m window --toggle obsidian || open  -a Obsidian ; skhd -k 'escape'
 scratchpad < d : yabai -m window --toggle discord || open  -a Discord ; skhd -k 'escape'
@@ -101,6 +101,7 @@ app < l : skhd -k 'escape' ; open -a 'Adobe Lightroom'
 app < m : skhd -k 'escape' ; open -a 'Canary Mail'
 app < p : skhd -k 'escape' ; open -a 'Adobe Photoshop'
 app < r : skhd -k 'escape' ; open -a 'DaVinci Resolve'
+app < t : skhd -k 'escape' ; kitty --title 'Main'
 app < v : skhd -k 'escape' ; open -a 'Visual Studio Code'
 
 # Quit App
