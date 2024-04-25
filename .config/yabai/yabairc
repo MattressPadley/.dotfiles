@@ -70,12 +70,9 @@ yabai -m rule --add app="^Finder$" title="^Copy$" manage=off
 yabai -m rule --add app="^Noodl Editor$" opacity=1.0
 yabai -m rule --add app="^Adobe Lightroom$" opacity=1.0
 yabai -m rule --add app="^Arc$" opacity=1.0
-
-
 yabai -m rule --add app="^Adobe Photoshop 2024$" opacity=1.0
 yabai -m rule --add app="^Lightroom Classic$" opacity=1.0
 yabai -m rule --add app="^DaVinci Resolve$" opacity=1.0
-
 yabai -m rule --add app="^Code$" opacity=0.95
 
 # Float by Default
