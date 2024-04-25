@@ -27,6 +27,7 @@ brew install yabai
 brew install skhd
 brew install sketchybar
 brew install trash
+brew install thefuck
 ```
 
 Run the following command to install the sketchybar-app-font:
