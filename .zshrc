@@ -35,7 +35,7 @@ alias z="zed"
 alias lg="lazygit"
 alias home="cd ~"
 alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
-
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 #scripts
 alias ma3="sh ma3.sh"
