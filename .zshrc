@@ -34,6 +34,7 @@ alias py="python3"
 alias z="zed"
 alias lg="lazygit"
 alias home="cd ~"
+alias dotfiles="cd ~/.dotfiles"
 alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
