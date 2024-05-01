@@ -92,6 +92,7 @@ scratchpad < o : yabai -m window --toggle obsidian || open  -a Obsidian ; skhd -
 scratchpad < d : yabai -m window --toggle discord || open  -a Discord ; skhd -k 'escape'
 scratchpad < i : yabai -m window --toggle messages || open  -a Messages ; skhd -k 'escape'
 scratchpad < p : yabai -m window --toggle pureref || open  -a PureRef ; skhd -k 'escape'
+scratchpad < c : yabai -m window --toggle calendar || open  -a Calendar ; skhd -k 'escape'
 
 # Apps
 app < a : skhd -k 'escape' ; open -a 'Arc'

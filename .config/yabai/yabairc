@@ -82,9 +82,10 @@ yabai -m rule --add app="^Messages$" manage=off
 yabai -m rule --add app="^Music$" title="^MiniPlayer$" scratchpad=music grid=11:11:9:1:2:8
 yabai -m rule --add app="^kitty$" title="^Scratchpad$" scratchpad=kitty grid=11:11:4:1:6:9
 yabai -m rule --add app="^Discord$" scratchpad=discord grid=11:11:4:1:6:9
-yabai -m rule --add app="^Obsidian$" scratchpad=obsidian grid=11:11:1:1:9:9
-yabai -m rule --add app="^Messages$" scratchpad=messages grid=11:11:1:1:9:9
+yabai -m rule --add app="^Obsidian$" scratchpad=obsidian grid=11:11:4:1:6:9
+yabai -m rule --add app="^Messages$" scratchpad=messages grid=11:11:4:1:6:9
 yabai -m rule --add app="^PureRef$" scratchpad=pureref grid=11:11:1:1:9:9
+yabai -m rule --add app="^Calendar$" scratchpad=calendar grid=11:11:1:1:9:9 
 
 # yabai -m rule --add app="^Music$" title="^MiniPlayer$" manage=on
 #yabai -m rule --add app="^Music$" manage=on
@@ -95,3 +96,5 @@ borders active_color=0xff89b4fa width=10.0 blur_radius=0 &
 # S K E T C H Y B A R  E V E N T S
 yabai -m signal --add event=window_focused action="sketchybar -m --trigger window_focus &> /dev/null"
 yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger title_change &> /dev/null"
+
+yabai -m rule --apply
