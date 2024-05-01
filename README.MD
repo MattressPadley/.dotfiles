@@ -14,7 +14,6 @@ https://www.josean.com/posts/sketchybar-setup
 brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
 brew install jq
-brew services start sketchybar
 brew install font-sf-pro
 brew install --cask sf-symbols
 brew install ifstat
@@ -28,6 +27,7 @@ brew install skhd
 brew install sketchybar
 brew install trash
 brew install thefuck
+brew install tdlr
 ```
 
 Run the following command to install the sketchybar-app-font:
