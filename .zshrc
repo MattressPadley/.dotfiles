@@ -29,7 +29,6 @@ alias pip="pip3"
 alias python="python3"
 alias vi="nvim"
 alias vim="nvim"
-alias pyfold="cd /Users/mhadley/Library/Mobile\ Documents/com~apple~CloudDocs/Dev/Python"
 alias py="python3"
 alias z="zed"
 alias lg="lazygit"
@@ -37,6 +36,12 @@ alias home="cd ~"
 alias dotfiles="cd ~/.dotfiles"
 alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+
+Dev() {
+    local dir
+    dir=$(fd --full-path '/Users/mhadley/Dev' --type d --exclude .git | fzf --preview 'eza --tree --color=always {} | head -200')
+    [[ -n "$dir" ]] && cd "$dir"
+}
 
 #scripts
 alias ma3="sh ma3.sh"
