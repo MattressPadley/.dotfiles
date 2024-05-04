@@ -39,7 +39,7 @@ alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time
 
 Dev() {
     local dir
-    dir=$(fd . ~/Dev --type d --exclude .git | fzf --preview 'eza --tree --color=always {} | head -200')
+    dir=$(fd . ~/Dev --type d --exclude .git | fzf --preview 'eza --tree --level 1 --color=always {} | head -200')
     [[ -n "$dir" ]] && cd "$dir"
 }
 
