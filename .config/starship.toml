@@ -27,7 +27,8 @@ $scala\
 $python\
 [](fg:sky bg:blue)\
 $time\
-[](fg:blue)\
+[](fg:blue)\ 
+$package\
 $line_break\
 $character 
 """
@@ -77,6 +78,11 @@ truncation_symbol = "…/"
 # will not be replaced, because "Documents" was already substituted before.
 # So either put "Important Documents" before "Documents" or use the substituted version:
 # "Important 󰈙 " = " 󰈙 "
+
+[package]
+style = "fg:base bg:pink"
+format = ' [](fg:pink)[$version]($style)[](fg:pink)'
+
 
 [c]
 symbol = " "
