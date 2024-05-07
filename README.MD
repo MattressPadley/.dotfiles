@@ -14,6 +14,7 @@ https://www.josean.com/posts/sketchybar-setup
 brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
 brew install jq
+brew install starship
 brew install font-sf-pro
 brew install --cask sf-symbols
 brew install ifstat
