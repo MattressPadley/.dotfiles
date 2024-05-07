@@ -36,6 +36,7 @@ alias home="cd ~"
 alias dotfiles="cd ~/.dotfiles"
 alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
+alias lst="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree"
 
 Dev() {
     local dir
