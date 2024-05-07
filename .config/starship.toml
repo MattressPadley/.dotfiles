@@ -5,12 +5,13 @@ format = """
 [](blue)\
 $os\
 $username\
-[](bg:maroon fg:blue)\
+$hostname\
+[](bg:maroon fg:blue)\
 $directory\
-[](fg:maroon bg:yellow)\
+[](fg:maroon bg:yellow)\
 $git_branch\
 $git_status\
-[](fg:yellow bg:sky)\
+[](fg:yellow bg:sky)\
 $c\
 $elixir\
 $elm\
@@ -23,13 +24,16 @@ $nodejs\
 $nim\
 $rust\
 $scala\
-[ ](fg:sky bg:lavender)\
+$python\
+[](fg:sky bg:blue)\
 $time\
-[ ](fg:lavender)\
+[](fg:blue)\
+$line_break\
+$character 
 """
 
 # Disable the blank line at the start of the prompt
-# add_newline = false
+add_newline = true
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
@@ -37,19 +41,28 @@ $time\
 show_always = true
 style_user = "bg:blue fg:base"
 style_root = "bg:#blue fg:base"
-format = '[$user ]($style)'
-disabled = false
+format = '[$user]($style)'
+
+[hostname]
+style = "bg:blue fg:base"
+format ="[@$hostname]($style)"
+ssh_only = true
 
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
 [os]
-style = "bg:#9A348E"
-disabled = true # Disabled by default
+style = "bg:blue fg:base"
+disabled = false # Disabled by default
+
+[os.symbols]
+Linux = " "
+Macos = " "
+Ubuntu = " "
 
 [directory]
 style = "bg:maroon fg:base"
-format = "[ $path]($style)"
-truncation_length = 3
+format = "[ $path ]($style)"
+truncation_length = 0
 truncation_symbol = "…/"
 
 # Here is how you can shorten some long paths by text replacement
@@ -69,6 +82,11 @@ truncation_symbol = "…/"
 symbol = " "
 style = "bg:sky"
 format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = " "
+style = "bg:sky fg:base"
+format = '[ $symbol($version)|($virtualenv)]($style)'
 
 [docker_context]
 symbol = " "
@@ -141,14 +159,14 @@ format = '[ $symbol ($version) ]($style)'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "fg:base bg:lavender"
-format = '[$time ]($style)'
+style = "fg:base bg:blue"
+format = '[ $time ]($style)'
 
-# [character]
-# # Note the use of Catppuccin color 'maroon'
-# success_symbol = "[[♥](green) ❯](maroon)"
-# error_symbol = "[❯](red)"
-# vimcmd_symbol = "[❮](green)"
+[character]
+# Note the use of Catppuccin color 'maroon'
+success_symbol = "[❯](blue)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
 
 # palette tables should be last in the config ⚓️
