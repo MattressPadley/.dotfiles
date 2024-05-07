@@ -83,7 +83,6 @@ truncation_symbol = "…/"
 style = "fg:base bg:pink"
 format = ' [](fg:pink)[$version]($style)[](fg:pink)'
 
-
 [c]
 symbol = " "
 style = "bg:sky"
