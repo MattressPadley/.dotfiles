@@ -64,6 +64,7 @@ yabai -m rule --add app="^Unreal Editor$" manage=off
 yabai -m rule --add app="^Python$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Finder$" title="^Copy$" manage=off
+yabai -m rule --add app="^Arc$" title="^Matt$" manage=off
 
 
 # Not Tranparent
@@ -74,6 +75,7 @@ yabai -m rule --add app="^Adobe Photoshop 2024$" opacity=1.0
 yabai -m rule --add app="^Lightroom Classic$" opacity=1.0
 yabai -m rule --add app="^DaVinci Resolve$" opacity=1.0
 yabai -m rule --add app="^Code$" opacity=0.95
+yabai -m rule --add app="^Blender$" opacity=1.0
 
 # Float by Default
 yabai -m rule --add app="^Messages$" manage=off
@@ -89,7 +91,7 @@ yabai -m rule --add app="^Calendar$" scratchpad=calendar grid=11:11:1:1:9:9
 
 # yabai -m rule --add app="^Music$" title="^MiniPlayer$" manage=on
 #yabai -m rule --add app="^Music$" manage=on
-#yabai -m rule --add app="^Arc$" subrole="^AXSystemDialog$" manage=off mouse_follows_focus=off
+yabai -m rule --add app="^Arc$" subrole="^AXSystemDialog$" manage=off mouse_follows_focus=off
 
 borders active_color=0xff89b4fa width=10.0 blur_radius=0 &
 
