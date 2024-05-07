@@ -166,7 +166,7 @@ format = '[ $symbol ($version) ]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "fg:base bg:blue"
-format = '[ $time ]($style)'
+format = '[ $time]($style)'
 
 [character]
 # Note the use of Catppuccin color 'maroon'
