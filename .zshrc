@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="xiong-chiamiov-plus"
+#ZSH_THEME="xiong-chiamiov-plus"
 
 COMPLETION_WAITING_DOTS="true"
 plugins=(git macos poetry poetry-env)
@@ -113,3 +113,6 @@ eval $(thefuck --alias)
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
+
+# ---- Starship -----
+eval "$(starship init zsh)" 
