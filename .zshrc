@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="xiong-chiamiov-plus"
 
 COMPLETION_WAITING_DOTS="true"
-plugins=(git macos poetry poetry-env)
+plugins=(git macos poetry poetry-env gh)
 
 source $ZSH/oh-my-zsh.sh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -24,6 +24,10 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # autoload -Uz compinit
 # compinit
+
+
+# github
+compctl -K _gh gh
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
