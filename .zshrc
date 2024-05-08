@@ -60,6 +60,24 @@ Dev() {
     [[ -n "$dir" ]] && cd "$dir"
 }
 
+repo() {
+  # Create an empty array to hold owners (your username and organizations)
+  owners=('MattressPadley')  # Adds your username from your GitHub profile
+
+  # Append organizations to the owners array
+  while read -r org; do
+    owners+=("$org")
+  done < <(gh org list)
+
+  # Loop through each specified owner and list their repositories
+  for owner in "${owners[@]}"; do
+    gh repo list $owner --json nameWithOwner | jq -r '.[].nameWithOwner'
+  done | fzf \
+    --preview 'gh repo view {} | glow ' \
+    --preview-window up:70%:wrap \
+    | xargs -I {} gh repo view {} -w
+}
+
 #scripts
 alias ma3="sh ma3.sh"
 alias upconf="zsh ~/.dotfiles/scripts/dotfiles-update.sh"
