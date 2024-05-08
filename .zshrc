@@ -6,23 +6,31 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git macos poetry poetry-env)
 
 source $ZSH/oh-my-zsh.sh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# The following lines were added by compinstall
-zstyle ':completion:*' completer _complete _ignored _correct _approximate
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' '' '' ''
-zstyle ':completion:*' menu select=1
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl true
-zstyle :compinstall filename '/Users/mhadley/.zshrc'
+# # The following lines were added by compinstall
+# zstyle ':completion:*' completer _complete _ignored _correct _approximate
+# zstyle ':completion:*' list-colors ''
+# zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+# zstyle ':completion:*' matcher-list '' '' '' ''
+# zstyle ':completion:*' menu select=1
+# zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+# zstyle ':completion:*' use-compctl true
+# zstyle :compinstall filename '/Users/mhadley/.zshrc'
 
-# Load Git completion
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-fpath=(~/.zsh $fpath)
+# # Load Git completion
+# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+# fpath=(~/.zsh $fpath)
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
+
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+  fi
 
 # End of lines added by compinstall
 PATH="$PATH:~/.dotfiles/scripts"

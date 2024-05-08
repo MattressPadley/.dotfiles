@@ -16,6 +16,8 @@ brew install font-hack-nerd-font
 brew install jq
 brew install starship
 brew install font-sf-pro
+brew install zsh-autosuggestions
+brew install zsh-completions
 brew install --cask sf-symbols
 brew install ifstat
 brew install --cask karabiner-elements
