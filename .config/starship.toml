@@ -95,17 +95,17 @@ format = '[ $symbol($version)|($virtualenv)]($style)'
 
 [docker_context]
 symbol = " "
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol $context ]($style)'
 
 [elixir]
 symbol = " "
-style = "bg:#sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [elm]
 symbol = " "
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
@@ -119,26 +119,26 @@ format = '[ $all_status$ahead_behind]($style)'
 
 [golang]
 symbol = " "
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [gradle]
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
 symbol = " "
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [julia]
 symbol = " "
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
@@ -148,7 +148,7 @@ format = '[ $symbol ($version) ]($style)'
 
 [nim]
 symbol = "󰆥 "
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
@@ -158,7 +158,7 @@ format = '[ $symbol ($version) ]($style)'
 
 [scala]
 symbol = " "
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
