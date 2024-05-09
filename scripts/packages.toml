@@ -1,0 +1,34 @@
+[packages]
+brew = [
+    "font-hack-nerd-font",
+    "jq",
+    "starship",
+    "font-sf-pro",
+    "zsh-autosuggestions",
+    "zsh-completions",
+    "--cask sf-symbols",
+    "ifstat",
+    "--cask karabiner-elements",
+    "eza",
+    "fzf",
+    "fd",
+    "bat",
+    "yabai",
+    "skhd",
+    "sketchybar",
+    "trash",
+    "thefuck",
+    "tdlr",
+    "--cask kitty",
+    "borders",
+    "--cask sol",
+    "python3",
+    "git",
+    "gh",
+    "glow",
+    "btop"
+]
+casks = [
+    "homebrew/cask-fonts",
+    "FelixKratz/formulae"
+]
