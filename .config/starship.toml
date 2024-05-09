@@ -153,7 +153,7 @@ format = '[ $symbol ($version) ]($style)'
 
 [rust]
 symbol = ""
-style = "bg:sky"
+style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [scala]
