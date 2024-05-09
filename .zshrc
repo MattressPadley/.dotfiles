@@ -96,7 +96,7 @@ export NVM_DIR="$HOME/.nvm"
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
-# -- Use fd instead of fzf --
+# -- Use fd instead of find --
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
@@ -149,4 +149,8 @@ eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 
 # ---- Starship -----
-eval "$(starship init zsh)" 
+eval "$(starship init zsh)"
+
+# ---- Rust ------
+export PATH="$HOME/.cargo/bin:$PATH"
+
