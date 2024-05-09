@@ -4,11 +4,8 @@
 - Yabai
 - skhd
 - raycast
-
-
 - sketchybar
 
-https://www.josean.com/posts/sketchybar-setup
 
 ```
 brew tap homebrew/cask-fonts
