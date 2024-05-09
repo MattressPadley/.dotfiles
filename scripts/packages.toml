@@ -22,11 +22,12 @@ brew = [
     "--cask kitty",
     "borders",
     "--cask sol",
-    "python3",
+    "python@3.11",
     "git",
     "gh",
     "glow",
-    "btop"
+    "btop",
+    "--cask font-ubuntu-nerd-font"
 ]
 casks = [
     "homebrew/cask-fonts",

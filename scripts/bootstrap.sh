@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -18,7 +19,6 @@ for package in "${packages[@]}"; do
 done
 
 # Font
-brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/latest/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
 # Install Rust 
@@ -27,6 +27,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 defaults write com.apple.dock autohide -bool true && killall Dock
 defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
 defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
+
+git clone https://github.com/MattressPadley/.dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+stow .
 
 yabai --start-service
 skhd --start-service
