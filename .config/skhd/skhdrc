@@ -83,7 +83,7 @@ window < backspace : osascript -e 'tell application "System Events" to perform a
 window < f : yabai -m window --toggle float; sketchybar --trigger window_focus
 
 # maximize a window
-ctrl + alt - m : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
+window < m : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
 
 #Scratchpads
 scratchpad < t : yabai -m window --toggle kitty || kitty --title=Scratchpad ~; skhd -k 'escape'
@@ -96,7 +96,7 @@ scratchpad < c : yabai -m window --toggle calendar || open  -a Calendar ; skhd -
 
 # Apps
 app < a : skhd -k 'escape' ; open -a 'Arc'
-app < c : skhd -k 'escape' ; open -a 'ChatGPT'
+# app < c : skhd -k 'escape' ; open -a 'ChatGPT'
 app < d : skhd -k 'escape' ; open -a 'Logic Pro X'
 app < f : skhd -k 'escape' ; open -a 'Finder'
 app < l : skhd -k 'escape' ; open -a 'Adobe Lightroom'
