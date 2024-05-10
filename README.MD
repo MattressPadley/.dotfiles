@@ -12,9 +12,16 @@
 
 
 
-## skhd Keys
+## skhd Keybindings
 
-skhd hotkeys use modes for different operations
+skhd hotkeys use modes for different operations. Window border colors will change and there will be a notification in the middle of sketchybar based on the mode you are in. 
+
+all modes are exited with escape or enter keys
+
+### Active mode - prefix
+```bash
+l - lock screen
+```
 
 ### App Mode - prefix + a
 ```bash
@@ -27,16 +34,20 @@ p - Adobe Photoshop
 r - DaVinci Resolve
 t - kitty
 v - Visual Studio Code
+
+backpace - Quit app
 ```
 ### Window Mode - prefix + w
 ```bash
 backspace - close window
 f - float window
+m - maximize window
 
 w - focus north
 a - focus west
 s - focus south
 d - focus east
+
 q - focus display west
 e - focus display east
 
@@ -44,6 +55,7 @@ up arrow - move window north
 left arrow - move window west
 right arrow - move window east
 down arrow - move window south
+
 shift + q - move window display west
 shift + e - move window display east
 
@@ -81,4 +93,11 @@ o - obsidian
 p - pureref (doesnt work quite right)
 c - calendar
 d - Discord
+```
+
+### Restart Mode - prefix + r
+```bash
+y - restart yabai
+s - restart skhd
+k - restart sketchybar
 ```
