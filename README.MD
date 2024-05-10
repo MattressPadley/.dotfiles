@@ -46,6 +46,10 @@ the prefix is set to f19 and I use karabiner-elements to map caps lock to f19
 ### Active mode - prefix
 ```bash
 l - lock screen
+a - app mode
+w - window mode
+s - scratchpad mode
+r - restart mode
 ```
 
 ### App Mode - prefix + a
