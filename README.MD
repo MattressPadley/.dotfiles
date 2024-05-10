@@ -17,7 +17,7 @@
 skhd hotkeys use modes for different operations
 
 ### App Mode - prefix + a
-```
+```bash
 a - arc
 d - Logic Pro
 f - Finder
@@ -29,7 +29,7 @@ t - kitty
 v - Visual Studio Code
 ```
 ### Window Mode - prefix + w
-```
+```bash
 backspace - close window
 f - float window
 
@@ -61,7 +61,7 @@ n - move window space next
 9 - focus space 9
 0 - focus space 10
 
-shift + 1 move window space 1
+shift + 1 - move window space 1
 shift + 2 - move window space 2
 shift + 3 - move window space 3
 shift + 4 - move window space 4
@@ -73,7 +73,7 @@ shift + 9 - move window space 9
 shift + 0 - move window space 10
 ```
 ### Scratchpad Mode - prefix + s
-```
+```bash
 i - iMessage
 t - kitty
 m - Music mini player
