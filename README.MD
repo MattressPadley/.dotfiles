@@ -17,7 +17,7 @@
 skhd hotkeys use modes for different operations
 
 ### App Mode - prefix + a
-
+```
 a - arc
 d - Logic Pro
 f - Finder
@@ -27,9 +27,9 @@ p - Adobe Photoshop
 r - DaVinci Resolve
 t - kitty
 v - Visual Studio Code
-
+```
 ### Window Mode - prefix + w
-
+```
 backspace - close window
 f - float window
 
@@ -71,9 +71,9 @@ shift + 7 - move window space 7
 shift + 8 - move window space 8
 shift + 9 - move window space 9
 shift + 0 - move window space 10
-
+```
 ### Scratchpad Mode - prefix + s
-
+```
 i - iMessage
 t - kitty
 m - Music mini player
@@ -81,3 +81,4 @@ o - obsidian
 p - pureref (doesnt work quite right)
 c - calendar
 d - Discord
+```
