@@ -1,4 +1,11 @@
 
+Welcome to my dotfiles! This is a collection of my configuration files for my macOS setup.
+
+all colors are based on catppuccin mocha
+
+## Installation
+
+ at your own risk
 
 ## Used Apps
 
@@ -9,7 +16,23 @@
 - sketchybar
 - jankyborders
 - starship
+- lnav
+- fzf
+- bat
+- eza
+- fd
+- kitty
+- btop
+- git
+- gh
+- zoxide
 
+## Fonts
+
+- SF pro
+- SF symbols
+- sketchybar app font
+- ubuntu sans mono nerd font
 
 
 ## skhd Keybindings
@@ -17,6 +40,8 @@
 skhd hotkeys use modes for different operations. Window border colors will change and there will be a notification in the middle of sketchybar based on the mode you are in. 
 
 all modes are exited with escape or enter keys
+
+the prefix is set to f19 and I use karabiner-elements to map caps lock to f19
 
 ### Active mode - prefix
 ```bash
