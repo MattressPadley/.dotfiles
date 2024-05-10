@@ -15,6 +15,7 @@ brew = [
     "jq",
     "--cask karabiner-elements",
     "kitty",
+    "lnav",
     "poetry",
     "python@3.11",
     "sketchybar",
