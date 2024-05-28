@@ -1,6 +1,6 @@
 [user]
 	name = Matt Hadley
-	email = mattresspadley@gmail.com
+	email = hello@matthadley.me
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
