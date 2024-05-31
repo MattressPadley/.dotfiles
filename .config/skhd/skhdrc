@@ -100,7 +100,7 @@ app < a : skhd -k 'escape' ; open -a 'Arc'
 app < d : skhd -k 'escape' ; open -a 'Logic Pro X'
 app < f : skhd -k 'escape' ; open -a 'Finder'
 app < l : skhd -k 'escape' ; open -a 'Adobe Lightroom'
-app < m : skhd -k 'escape' ; open -a 'Canary Mail'
+app < m : skhd -k 'escape' ; open -a 'Proton Mail'
 app < p : skhd -k 'escape' ; open -a 'Adobe Photoshop'
 app < r : skhd -k 'escape' ; open -a 'DaVinci Resolve'
 app < t : skhd -k 'escape' ; kitty --title 'Main' ~
