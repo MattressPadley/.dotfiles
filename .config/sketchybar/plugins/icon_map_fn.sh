@@ -7,7 +7,7 @@ function __icon_map() {
    "Live")
         icon_result=":ableton:"
         ;;
-   "Adobe Bridge 2024")
+   "Adobe Bridge"*)
         icon_result=":adobe_bridge:"
         ;;
    "Affinity Designer")
@@ -426,6 +426,9 @@ function __icon_map() {
         ;;
    "Adobe Photoshop"*)
         icon_result=":photoshop:"
+        ;;
+   "PhpStorm")
+        icon_result=":php_storm:"
         ;;
    "Pi-hole Remote")
         icon_result=":pihole:"
