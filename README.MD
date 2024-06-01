@@ -58,7 +58,7 @@ a - arc
 d - Logic Pro
 f - Finder
 l - Adobe Lightroom
-m - Canary Mail
+m - Proton Mail
 p - Adobe Photoshop
 r - DaVinci Resolve
 t - kitty
