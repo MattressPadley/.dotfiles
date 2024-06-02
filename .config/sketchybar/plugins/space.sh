@@ -5,12 +5,10 @@ update() {
   if [ $SELECTED = true ]; then
     sketchybar --set $NAME background.drawing=on \
                           background.color=$HIGHLIGHT_COLOR \
-                          label.color=$LABEL_HIGHLIGHT_COLOR \
-                          icon.color=$ICON_HIGHLIGHT_COLOR
+                          label.color=$LABEL_HIGHLIGHT_COLOR 
   else
     sketchybar --set $NAME background.drawing=on \
                           label.color=$LABEL_COLOR \
-                          icon.color=$ICON_COLOR\
                           background.border_color=$HIGHLIGHT_COLOR\
                           background.color=$BACKGROUND_1\
                           background.border_width=1
