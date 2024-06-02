@@ -85,6 +85,20 @@ window < f : yabai -m window --toggle float; sketchybar --trigger window_focus
 # maximize a window
 window < m : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
 
+# Stack windows
+window < shift - s : yabai -m window --stack south
+window < shift - w : yabai -m window --stack north
+window < shift - a : yabai -m window --stack west
+window < shift - d : yabai -m window --stack east
+
+# focus stack
+window < tab : yabai -m window --focus stack.next
+window < shift - tab : yabai -m window --focus stack.prev
+
+# stack space
+window < space : yabai -m space --layout stack
+window < shift - space : yabai -m space --layout bsp
+
 #Scratchpads
 scratchpad < t : yabai -m window --toggle kitty || kitty --title=Scratchpad ~; skhd -k 'escape'
 scratchpad < m : yabai -m window --toggle music || open  -a Music ; skhd -k 'escape'
