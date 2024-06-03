@@ -17,10 +17,10 @@ if [ "$SENDER" = "space_windows_change" ]; then
         # Append the icon to the icon_strip
         icon_strip+="${icon}"
       fi
+    sketchybar --animate sin 10 --set space.$space label="$icon_strip" label.drawing=on
     done < <(echo "$apps")
   else
-    icon_strip=""
+    sketchybar --animate sin 10 --set space.$space label="" label.drawing=off
   fi
 
-  sketchybar --animate sin 10 --set space.$space label="$icon_strip"
 fi
