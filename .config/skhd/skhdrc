@@ -110,7 +110,7 @@ scratchpad < c : yabai -m window --toggle calendar || open  -a Calendar ; skhd -
 
 # Apps
 app < a : skhd -k 'escape' ; open -a 'Arc'
-# app < c : skhd -k 'escape' ; open -a 'ChatGPT'
+app < c : skhd -k 'escape' ; open -a 'ChatGPT'
 app < d : skhd -k 'escape' ; open -a 'Logic Pro X'
 app < f : skhd -k 'escape' ; open -a 'Finder'
 app < l : skhd -k 'escape' ; open -a 'Adobe Lightroom'
