@@ -3,40 +3,14 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="xiong-chiamiov-plus"
 
 COMPLETION_WAITING_DOTS="true"
-plugins=(git macos poetry poetry-env gh)
+plugins=(git poetry poetry-env gh)
 
 source $ZSH/oh-my-zsh.sh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# # The following lines were added by compinstall
-# zstyle ':completion:*' completer _complete _ignored _correct _approximate
-# zstyle ':completion:*' list-colors ''
-# zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-# zstyle ':completion:*' matcher-list '' '' '' ''
-# zstyle ':completion:*' menu select=1
-# zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-# zstyle ':completion:*' use-compctl true
-# zstyle :compinstall filename '/Users/mhadley/.zshrc'
-
-# # Load Git completion
-# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-# fpath=(~/.zsh $fpath)
-
-# autoload -Uz compinit
-# compinit
 
 
 # github
 compctl -K _gh gh
 
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-    autoload -Uz compinit
-    compinit
-  fi
-
-# End of lines added by compinstall
 PATH="$PATH:~/.dotfiles/scripts"
 
 
@@ -46,11 +20,9 @@ alias python="python3"
 alias vi="nvim"
 alias vim="nvim"
 alias py="python3"
-alias z="zed"
 alias lg="lazygit"
 alias home="cd ~"
 alias dotfiles="cd ~/.dotfiles"
-alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 alias lst="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree"
 
@@ -151,6 +123,4 @@ eval "$(zoxide init zsh)"
 # ---- Starship -----
 eval "$(starship init zsh)"
 
-# ---- Rust ------
-export PATH="$HOME/.cargo/bin:$PATH"
 
