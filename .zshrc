@@ -47,6 +47,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias py="python3"
 alias z="zed"
+alias c="code ."
 alias lg="lazygit"
 alias home="cd ~"
 alias dotfiles="cd ~/.dotfiles"
@@ -57,7 +58,10 @@ alias lst="eza --color=always --long --git --icons=always --no-time --no-user --
 Dev() {
     local dir
     dir=$(fd . ~/Dev --type d --exclude .git | fzf --preview 'eza --tree --level 1 --color=always {} | head -200')
-    [[ -n "$dir" ]] && cd "$dir"
+    if [[ -n "$dir" ]]; then
+        cd ~
+        cd "$dir"
+    fi
 }
 
 repo() {

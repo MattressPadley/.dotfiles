@@ -9,14 +9,15 @@
 :: app @ : borders active_color=0xffa6e3a1 ; sketchybar --trigger skhd_mode MODE=App
 
 # Mode shifting
-default < f19 ; active
+default < f12 ; active
 active < w ; window
 active < s ; scratchpad
 active < r ; restart
 active < a ; app
 
 # Sleep Display
-active < l : skhd -k 'escape' ; pmset displaysleepnow
+active < l : skhd -k 'escape' ; skhd -k 'alt + end' ; pmset displaysleepnow
+active < p : skhd -k 'alt - end'
 
 scratchpad, window, active, restart, app < escape ; default
 scratchpad, window, active, restart, app < return ; default
