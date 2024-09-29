@@ -7,20 +7,20 @@ if [ "$SENDER" = "space_windows_change" ]; then
   space="$(echo "$INFO" | jq -r '.space')"
   apps="$(echo "$INFO" | jq -r '.apps | keys[]')"
 
-  icon_strip=" "
+  icon_strip=""
   if [ -n "$apps" ]; then
     while IFS= read -r app; do
       # Check if the app is not in the EXCLUDED_APPS array
       if [[ ! " ${EXCLUDED_APPS[@]} " =~ " ${app} " ]]; then
         # Fetch the icon for the app
-        icon="$("$CONFIG_DIR/plugins/icon_map_fn.sh" "$app")"
+        icon="$("$CONFIG_DIR/icon_map.sh" "$app")"
         # Append the icon to the icon_strip
-        icon_strip+="${icon} "
+        icon_strip+="${icon}"
       fi
+    sketchybar --animate sin 10 --set space.$space label="$icon_strip" label.drawing=on
     done < <(echo "$apps")
   else
-    icon_strip=" —"
+    sketchybar --animate sin 10 --set space.$space label="" label.drawing=off
   fi
 
-  sketchybar --animate sin 10 --set space.$space label="$icon_strip"
 fi

@@ -11,9 +11,10 @@
         "keymap_def_pop_view": "Press ${ansi_bold}q${ansi_norm} to return to the previous view",
         "keymap_def_zoom": "Press ${ansi_bold}z${ansi_norm}/${ansi_bold}Z${ansi_norm} to zoom in/out",
         "keymap_def_clear": "Press ${ansi_bold}C${ansi_norm} to clear marked messages",
-        "keymap_def_prev_location": "Press ${ansi_bold}{${ansi_norm} to move to the previous location in history",
-        "keymap_def_next_location": "Press ${ansi_bold}}${ansi_norm} to move to the next location in history",
-        "keymap_def_next_mark": "Press ${ansi_bold}c${ansi_norm} to copy marked lines to the clipboard; press ${ansi_bold}C${ansi_norm} to clear marked lines"
+        "keymap_def_prev_section": "Press ${ansi_bold}{${ansi_norm} to move to the previous section in the view",
+        "keymap_def_next_section": "Press ${ansi_bold}}${ansi_norm} to move to the next section in the view",
+        "keymap_def_next_mark": "Press ${ansi_bold}c${ansi_norm} to copy marked lines to the clipboard; press ${ansi_bold}C${ansi_norm} to clear marked lines",
+        "keymap_def_time_offset": "Press ${ansi_bold}s${ansi_norm}/${ansi_bold}S${ansi_norm} to move forward/backward through slow downs"
     },
     "ui": {
         "keymap-defs": {
@@ -76,7 +77,7 @@
                     "command": ";UPDATE lnav_views SET top = top + (height / 2), selection = (CASE movement WHEN 'top' THEN selection ELSE top + (height / 2) + (selection - top) END) WHERE name = (SELECT name FROM lnav_top_view)"
                 },
                 "x15": {
-                    "command": ";UPDATE lnav_views SET top = top - (height / 2), selection = (CASE movement WHEN 'top' THEN selection ELSE top - (height / 2) + (selection - top) END) WHERE name = (SELECT name FROM lnav_top_view)"
+                    "command": ";UPDATE lnav_views SET top = max(0, top - (height / 2)), selection = (CASE movement WHEN 'top' THEN selection ELSE max(0, top - (height / 2) + (selection - top)) END) WHERE name = (SELECT name FROM lnav_top_view)"
                 },
                 "x3d": {
                     "command": ";UPDATE lnav_views SET paused = 1 - paused"
@@ -113,7 +114,7 @@
                     "alt-msg": "${keymap_def_alt_hour_boundary}"
                 },
                 "x63": {
-                    "command": ":write-to /dev/clipboard",
+                    "command": "|lnav-copy-text",
                     "alt-msg": "${keymap_def_clear}"
                 },
                 "x67": {
@@ -131,6 +132,19 @@
                     "command": ":next-mark search",
                     "alt-msg": "${keymap_def_scroll_horiz}"
                 },
+                "x54": {
+                    "command": ";UPDATE lnav_views SET options = json_set(options, '$.row-time-offset', CASE jget(options, '/row-time-offset', 'hide') WHEN 'hide' THEN 'show' ELSE 'hide' END) WHERE name = (SELECT name FROM lnav_top_view)",
+                    "alt-msg": "${keymap_def_time_offset}"
+                },
+                "x70": {
+                    "command": ";UPDATE lnav_views SET options = json_set(options, '$.row-details', CASE jget(options, '/row-details', 'hide') WHEN 'hide' THEN 'show' ELSE 'hide' END) WHERE name = (SELECT name FROM lnav_top_view)"
+                },
+                "x78": {
+                    "command": ";UPDATE lnav_views SET options = json_set(options, '$.hidden-fields', CASE jget(options, '/hidden-fields', 'hide') WHEN 'hide' THEN 'show' ELSE 'hide' END) WHERE name = (SELECT name FROM lnav_top_view)"
+                },
+                "x17": {
+                    "command": ";UPDATE lnav_views SET options = json_set(options, '$.word-wrap', CASE jget(options, '/word-wrap', 'none') WHEN 'none' THEN 'normal' ELSE 'none' END) WHERE name = (SELECT name FROM lnav_top_view)"
+                },
                 "x75": {
                     "command": ":next-mark",
                     "alt-msg": "${keymap_def_next_mark}"
@@ -139,11 +153,11 @@
                     "command": ":prev-mark"
                 },
                 "x7d": {
-                    "command": ":next-location",
+                    "command": ":next-section",
                     "alt-msg": "${keymap_def_prev_location}"
                 },
                 "x7b": {
-                    "command": ":prev-location",
+                    "command": ":prev-section",
                     "alt-msg": "${keymap_def_next_location}"
                 },
                 "x3f": {
@@ -156,6 +170,10 @@
                 "x50": {
                     "command": ":toggle-view pretty",
                     "alt-msg": "${keymap_def_pop_view}"
+                },
+                "x60": {
+                    "id": "org.lnav.key.breadcrumb.focus",
+                    "command": ":prompt breadcrumb"
                 },
                 "x76": {
                     "command": ":toggle-view db"

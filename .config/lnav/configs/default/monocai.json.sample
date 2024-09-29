@@ -12,6 +12,7 @@
                     "magenta": "#ae81ff",
                     "cyan": "#66d9ee",
                     "white": "#808080",
+                    "orange": "#fc9867",
                     "semantic_highlight_color": "semantic()"
                 },
                 "styles": {
@@ -22,10 +23,11 @@
                         "color": "#f6f6f6",
                         "background-color": "$black"
                     },
+                    "selected-text": {
+                        "background-color": "$cyan"
+                    },
                     "alt-text": {
-                        "color": "#f6f6f6",
-                        "background-color": "$black",
-                        "bold": true
+                        "background-color": "#1c1c1c"
                     },
                     "ok": {
                         "color": "$green",
@@ -49,9 +51,12 @@
                     },
                     "cursor-line": {
                         "color": "$cyan",
-                        "background-color": "$red",
-                        "bold": true,
-                        "underline": true
+                        "background-color": "#7f005f",
+                        "bold": true
+                    },
+                    "disabled-cursor-line": {
+                        "color": "$cyan",
+                        "background-color": "#5f005f"
                     },
                     "adjusted-time": {
                         "color": "$magenta"
@@ -61,6 +66,9 @@
                     },
                     "offset-time": {
                         "color": "$cyan"
+                    },
+                    "file-offset": {
+                        "color": "#888"
                     },
                     "invalid-msg": {
                         "color": "$yellow"
@@ -111,7 +119,8 @@
                         "color": "$yellow"
                     },
                     "breadcrumb": {
-                        "color": "#99a"
+                        "color": "$orange",
+                        "bold": true
                     },
                     "table-border": {
                         "color": "#444"
@@ -136,9 +145,16 @@
                     },
                     "snippet-border": {
                         "color": "$cyan"
+                    },
+                    "indent-guide": {
+                        "color": "#444"
                     }
                 },
                 "syntax-styles": {
+                    "inline-code": {
+                        "color": "$red",
+                        "background-color": "#121212"
+                    },
                     "quoted-code": {
                         "color": "#eee",
                         "background-color": "#121212"
@@ -194,8 +210,26 @@
                     "file": {
                         "color": "$blue"
                     },
+                    "null": {
+                        "color": "#888"
+                    },
+                    "ascii-control": {
+                        "color": "$green"
+                    },
+                    "non-ascii": {
+                        "color": "$yellow"
+                    },
                     "number": {
                         "bold": true
+                    },
+                    "function": {
+                        "color": "$cyan"
+                    },
+                    "separators-references-accessors": {
+                        "color": "$red"
+                    },
+                    "type": {
+                        "color": "$blue"
                     }
                 },
                 "status-styles": {
@@ -250,6 +284,9 @@
                     "inactive-alert": {
                         "color": "$red",
                         "background-color": "#2f2f2f"
+                    },
+                    "suggestion": {
+                        "color": "#888"
                     }
                 },
                 "log-level-styles": {

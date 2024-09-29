@@ -32,7 +32,7 @@ volume_icon=(
   label.font="$FONT:Regular:14.0"
 )
 
-status_bracket=(
+cc_bracket=(
   background.color=$BACKGROUND_1
   background.border_color=$BAR_BORDER_COLOR
   background.border_width=1
@@ -46,8 +46,8 @@ sketchybar --add slider volume right            \
            --add item volume_icon right         \
            --set volume_icon "${volume_icon[@]}"
 
-sketchybar --add bracket status github.bell volume_icon \
-           --set status "${status_bracket[@]}"
+sketchybar --add bracket cc volume_icon github.bell \
+           --set cc "${cc_bracket[@]}"
 
 
 # sketchybar --add item volume right \

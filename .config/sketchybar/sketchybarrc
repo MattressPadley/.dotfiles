@@ -8,29 +8,30 @@ ITEM_DIR="$CONFIG_DIR/items"
 source "$CONFIG_DIR/colors.sh"
 source "$CONFIG_DIR/icons.sh"
 
-FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-PADDINGS=3 # All paddings use this value (icon, label, background)
-ITEM_BG_PADDING=10
+FONT="UbuntuSans Nerd Font" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+FONT2="LED Dot-Matrix"
+PADDINGS=2 # All paddings use this value (icon, label, background)
+ITEM_BG_PADDING=2
 
 # Unload the macOS on screen indicator overlay for volume change
 launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
 
-
 # Setting up the general bar appearance of the bar
 bar=(
-  height=30
-  color=$TRANS_BAR_COLOR
+  height=35
+  color=$BAR_COLOR
   border_width=0
   border_color=$BAR_BORDER_COLOR
   blur_radius=20
-  shadow=off
+  shadow=on
   position=top
   sticky=on
   padding_right=10
   padding_left=10
-  y_offset=0
-  margin=0
+  y_offset=5
+  margin=15
   topmost=window
+  corner_radius=6
 )
 sketchybar --bar "${bar[@]}"
 
@@ -38,21 +39,23 @@ sketchybar --bar "${bar[@]}"
 defaults=(
   updates=when_shown
   icon.font="$FONT:Bold:14.0"
+  icon.align=center
   icon.color=$ICON_COLOR
   icon.padding_left=$PADDINGS
   icon.padding_right=$PADDINGS
   label.font="$FONT:Semibold:13.0"
+  label.align=center
   label.color=$LABEL_COLOR
   label.padding_left=$PADDINGS
   label.padding_right=$PADDINGS
-  padding_right=$PADDINGS
-  padding_left=$PADDINGS
+  padding_right=$ITEM_BG_PADDING
+  padding_left=$ITEM_BG_PADDING
   background.height=24
   background.corner_radius=4
   background.border_width=0
   background.color=$BACKGROUND_1
   background.border_color=$HIGHLIGHT_COLOR
-  popup.background.border_width=1
+  popup.background.border_width=0
   popup.background.corner_radius=6
   popup.background.border_color=$POPUP_BORDER_COLOR
   popup.background.color=$POPUP_BACKGROUND_COLOR

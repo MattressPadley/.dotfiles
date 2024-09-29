@@ -11,16 +11,22 @@
                         "color": "Silver",
                         "background-color": "Black"
                     },
+                    "selected-text": {
+                        "background-color": "DarkCyan"
+                    },
                     "identifier": {
                         "background-color": "",
                         "color": "semantic()"
                     },
                     "alt-text": {
-                        "color": "Silver",
-                        "bold": true
+                        "background-color": "#262626"
                     },
                     "ok": {
                         "color": "Green",
+                        "bold": true
+                    },
+                    "info": {
+                        "color": "Maroon",
                         "bold": true
                     },
                     "error": {
@@ -36,10 +42,14 @@
                         "bold": true
                     },
                     "cursor-line": {
-                        "color": "Cyan",
+                        "color": "Cyan1",
                         "background-color": "Red",
                         "bold": true,
                         "underline": true
+                    },
+                    "disabled-cursor-line": {
+                        "color": "Cyan1",
+                        "background-color": "#5f005f"
                     },
                     "adjusted-time": {
                         "color": "Maroon"
@@ -49,6 +59,9 @@
                     },
                     "offset-time": {
                         "color": "Teal"
+                    },
+                    "file-offset": {
+                        "color": "Silver"
                     },
                     "invalid-msg": {
                         "color": "Yellow"
@@ -87,16 +100,62 @@
                     "h6": {
                         "underline": true
                     },
+                    "hr": {
+                        "color": "#444"
+                    },
+                    "hyperlink": {
+                        "underline": true
+                    },
                     "list-glyph": {
                         "color": "Yellow"
                     },
                     "breadcrumb": {
+                        "color": "Teal",
+                        "bold": true
+                    },
+                    "table-border": {
+                        "color": "#444"
+                    },
+                    "table-header": {
+                        "bold": true
+                    },
+                    "quote-border": {
+                        "color": "#666",
+                        "background-color": "#444"
+                    },
+                    "quoted-text": {
+                        "background-color": "#444"
+                    },
+                    "footnote-border": {
+                        "color": "Blue",
+                        "background-color": "#444"
+                    },
+                    "footnote-text": {
+                        "color": "#eee",
+                        "background-color": "#444"
+                    },
+                    "snippet-border": {
                         "color": "Teal"
+                    },
+                    "indent-guide": {
+                        "color": "#444"
                     }
                 },
                 "syntax-styles": {
+                    "inline-code": {
+                        "color": "Red",
+                        "background-color": "#121212"
+                    },
+                    "quoted-code": {
+                        "color": "Silver",
+                        "background-color": "#121212"
+                    },
+                    "code-border": {
+                        "color": "#444",
+                        "background-color": "#121212"
+                    },
                     "keyword": {
-                        "color": "Blue"
+                        "color": "#00f"
                     },
                     "string": {
                         "color": "Green",
@@ -130,19 +189,37 @@
                         "color": "Maroon"
                     },
                     "spectrogram-low": {
-                        "background-color": "$green"
+                        "background-color": "Green"
                     },
                     "spectrogram-medium": {
-                        "background-color": "$yellow"
+                        "background-color": "Yellow"
                     },
                     "spectrogram-high": {
-                        "background-color": "$red"
+                        "background-color": "Red"
                     },
                     "file": {
                         "color": "Blue"
                     },
+                    "null": {
+                        "color": "Silver"
+                    },
+                    "ascii-control": {
+                        "color": "Green"
+                    },
+                    "non-ascii": {
+                        "color": "Yellow"
+                    },
                     "number": {
                         "bold": true
+                    },
+                    "function": {
+                        "color": "Cyan1"
+                    },
+                    "separators-references-accessors": {
+                        "color": "Silver"
+                    },
+                    "type": {
+                        "color": "Blue"
                     }
                 },
                 "status-styles": {

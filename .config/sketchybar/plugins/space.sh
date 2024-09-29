@@ -6,14 +6,19 @@ update() {
     sketchybar --set $NAME background.drawing=on \
                           background.color=$HIGHLIGHT_COLOR \
                           label.color=$LABEL_HIGHLIGHT_COLOR \
-                          icon.color=$ICON_HIGHLIGHT_COLOR
+                          label.background.border_color=$BASE \
+                          icon.color=$ICON_HIGHLIGHT_COLOR \
+                          icon.background.color=$HIGHLIGHT_COLOR\
+                          icon.background.border_color=$BASE
   else
     sketchybar --set $NAME background.drawing=on \
                           label.color=$LABEL_COLOR \
-                          icon.color=$ICON_COLOR\
                           background.border_color=$HIGHLIGHT_COLOR\
                           background.color=$BACKGROUND_1\
-                          background.border_width=1
+                          background.border_width=1\
+                          icon.color=$ICON_COLOR\
+                          icon.background.color=$BASE\
+                          icon.background.border_color=$HIGHLIGHT_COLOR
   fi
 }
 

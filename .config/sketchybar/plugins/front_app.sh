@@ -10,5 +10,9 @@ APP_TITLE=$(/opt/homebrew/bin/yabai -m query --windows --window | jq -r '.app')
 #if [ "$SENDER" = "front_app_switched" ]; then
 #  sketchybar --set $NAME label="$INFO | $WINDOW_TITLE" icon="$($CONFIG_DIR/plugins/icon_map_fn.sh "$INFO")"
 #fi
-
-sketchybar --set $NAME label="$APP_TITLE | $WINDOW_TITLE" icon="$($CONFIG_DIR/plugins/icon_map_fn.sh "$APP_TITLE")"
+# echo "App Title: $APP_TITLE, $INFO, $SENDER"
+if [ -n "$APP_TITLE" ]; then
+    sketchybar --set $NAME drawing=on label="$APP_TITLE | $WINDOW_TITLE" icon="$($CONFIG_DIR/icon_map.sh "$APP_TITLE")"
+else
+    sketchybar --set $NAME drawing=off
+fi

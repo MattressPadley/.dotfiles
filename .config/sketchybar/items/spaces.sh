@@ -15,13 +15,20 @@ do
     space=$sid
     icon="${SPACE_ICONS[i]}"
     icon.padding_left=10
-    icon.padding_right=0
+    icon.padding_right=10
+    icon.background.color=$BASE
+    icon.background.height=30
+    icon.background.corner_radius=4
+    icon.background.border_width=1
+    icon.background.border_color=$BAR_BORDER_COLOR
     padding_left=2
     padding_right=2
-    label.padding_right=15
+    label.padding_right=5
+    label.padding_left=5
+    background.padding_right=2
     icon.highlight_color=$ICON_COLOR
-    label.font="sketchybar-app-font:Regular:16.0"
-    label.y_offset=-1
+    label.font="sketchybar-app-font:Regular:18.0"
+    label.y_offset=0
     script="$PLUGIN_DIR/space.sh"
   )
 
@@ -33,8 +40,8 @@ done
 space_creator=(
   icon=􀆊
   icon.font="$FONT:Heavy:16.0"
-  padding_left=10
-  padding_right=10
+  padding_left=5
+  padding_right=5
   label.drawing=off
   background.drawing=off
   display=active
