@@ -57,9 +57,8 @@ alias lst="eza --color=always --long --git --icons=always --no-time --no-user --
 
 dev() {
     local dir
-    dir=$(fd . ~/Dev --type d --exclude .git | fzf --preview 'eza --tree --level 1 --color=always {} | head -200')
+    dir=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive | fzf --preview 'eza --tree --level 1 --color=always {} | head -200')
     if [[ -n "$dir" ]]; then
-        cd ~
         cd "$dir"
     fi
 }

@@ -10,14 +10,38 @@
 
 # Mode shifting
 default < f12 ; active
+active < f12 ; default
 active < w ; window
 active < s ; scratchpad
 active < r ; restart
 active < a ; app
 
+
+# resize window
+active < right : yabai -m window --resize right:40:0 || yabai -m window --resize left:40:0
+active < left  : yabai -m window --resize left:-40:0 || yabai -m window --resize right:-40:0
+active < alt - right : yabai -m window --resize right:100:0 || yabai -m window --resize left:100:0
+active < alt - left : yabai -m window --resize left:-100:0 || yabai -m window --resize right:-100:0
+
 # Sleep Display
 active < l : skhd -k 'escape' ; skhd -k 'alt + end' ; pmset displaysleepnow
 active < p : skhd -k 'alt - end'
+
+# Stack windows
+active < shift - down : yabai -m window --stack south
+active < shift - up : yabai -m window --stack north
+active < shift - left : yabai -m window --stack west
+active < shift - right : yabai -m window --stack east
+
+#unstack windows
+active < ctrl - up : yabai -m window --unstack
+active < ctrl - down : yabai -m window --unstack
+active < ctrl - left : yabai -m window --unstack
+active < ctrl - right : yabai -m window --unstack
+
+# focus stack
+active < up : yabai -m window --focus stack.prev
+active < down : yabai -m window --focus stack.next
 
 scratchpad, window, active, restart, app < escape ; default
 scratchpad, window, active, restart, app < return ; default
@@ -52,10 +76,8 @@ window < left : yabai -m window --swap west
 window < right : yabai -m window --swap east
 
 # move window and split
-window < shift - down : yabai -m window --warp south
-window < shift - up : yabai -m window --warp north
-window < shift - left : yabai -m window --warp west
-window < shift - right : yabai -m window --warp east
+window < shift - left : yabai -m window --warp west; yabai -m window --toggle split
+window < shift - right : yabai -m window --warp east; yabai -m window --toggle split
 
 # move window to display left and right
 window < shift - q : yabai -m window --display west; yabai -m display --focus west
@@ -78,7 +100,7 @@ window < shift - 9 : yabai -m window --space 9;
 window < shift - 0 : yabai -m window --space 10;
 
 #close window
-window < backspace : osascript -e 'tell application "System Events" to perform action "AXPress" of (first button whose subrole is "AXCloseButton") of (first window whose subrole is "AXStandardWindow") of (first process whose frontmost is true)'
+# window < backspace : osascript -e 'tell application "System Events" to perform action "AXPress" of (first button whose subrole is "AXCloseButton") of (first window whose subrole is "AXStandardWindow") of (first process whose frontmost is true)'
 
 # toggle window float
 window < f : yabai -m window --toggle float; sketchybar --trigger window_focus
@@ -86,19 +108,9 @@ window < f : yabai -m window --toggle float; sketchybar --trigger window_focus
 # maximize a window
 window < m : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
 
-# Stack windows
-window < shift - s : yabai -m window --stack south
-window < shift - w : yabai -m window --stack north
-window < shift - a : yabai -m window --stack west
-window < shift - d : yabai -m window --stack east
-
-# focus stack
-window < tab : yabai -m window --focus stack.next
-window < shift - tab : yabai -m window --focus stack.prev
-
-# stack space
-window < space : yabai -m space --layout stack
-window < shift - space : yabai -m space --layout bsp
+# # stack space
+# window < space : yabai -m space --layout stack
+# window < shift - space : yabai -m space --layout bsp
 
 #Scratchpads
 scratchpad < t : yabai -m window --toggle kitty || kitty --title=Scratchpad ~; skhd -k 'escape'
