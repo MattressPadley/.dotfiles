@@ -24,20 +24,13 @@ active < alt - right : yabai -m window --resize right:100:0 || yabai -m window -
 active < alt - left : yabai -m window --resize left:-100:0 || yabai -m window --resize right:-100:0
 
 # Sleep Display
-active < l : skhd -k 'escape' ; skhd -k 'alt + end' ; pmset displaysleepnow
-active < p : skhd -k 'alt - end'
+active < l : skhd -k 'escape' ; skhd -k 'alt - end' ; pmset displaysleepnow
 
 # Stack windows
 active < shift - down : yabai -m window --stack south
 active < shift - up : yabai -m window --stack north
 active < shift - left : yabai -m window --stack west
 active < shift - right : yabai -m window --stack east
-
-#unstack windows
-active < ctrl - up : yabai -m window --unstack
-active < ctrl - down : yabai -m window --unstack
-active < ctrl - left : yabai -m window --unstack
-active < ctrl - right : yabai -m window --unstack
 
 # focus stack
 active < up : yabai -m window --focus stack.prev

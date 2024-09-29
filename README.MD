@@ -1,4 +1,3 @@
-
 Welcome to my dotfiles! This is a collection of my configuration files for my macOS setup.
 
 all colors are based on catppuccin mocha
@@ -39,92 +38,98 @@ all colors are based on catppuccin mocha
 
 skhd hotkeys use modes for different operations. Window border colors will change and there will be a notification in the middle of sketchybar based on the mode you are in. 
 
-all modes are exited with escape or enter keys
+All modes are exited with escape or enter keys.
 
-the prefix is set to f19 and I use karabiner-elements to map caps lock to f19
+The prefix is set to f12.
 
-### Active mode - prefix
+### Default to Active Mode
 ```bash
-l - lock screen
-a - app mode
-w - window mode
-s - scratchpad mode
-r - restart mode
+f12 - enter active mode
 ```
 
-### App Mode - prefix + a
+### Active Mode - f12
 ```bash
-a - arc
-d - Logic Pro
-f - Finder
-l - Adobe Lightroom
-m - Canary Mail
-p - Adobe Photoshop
-r - DaVinci Resolve
-t - kitty
-v - Visual Studio Code
+f12 - return to default mode
+w - enter window mode
+s - enter scratchpad mode
+r - enter restart mode
+a - enter app mode
 
-backpace - Quit app
+right - resize window right
+left - resize window left
+alt + right - resize window right (larger increment)
+alt + left - resize window left (larger increment)
+
+l - lock screen (sleep display)
+
+shift + down - stack window south
+shift + up - stack window north
+shift + left - stack window west
+shift + right - stack window east
+
+up - focus previous window in stack
+down - focus next window in stack
 ```
-### Window Mode - prefix + w
-```bash
-backspace - close window
-f - float window
-m - maximize window
 
+### Window Mode - f12 + w
+```bash
 w - focus north
-a - focus west
 s - focus south
+a - focus west
 d - focus east
 
 q - focus display west
 e - focus display east
 
-up arrow - move window north
-left arrow - move window west
-right arrow - move window east
-down arrow - move window south
+1-0 - focus space 1-10
 
-shift + q - move window display west
-shift + e - move window display east
+down - swap window south
+up - swap window north
+left - swap window west
+right - swap window east
 
-p - move window space previous
-n - move window space next
+shift + left - warp window west and toggle split
+shift + right - warp window east and toggle split
 
-1 - focus space 1
-2 - focus space 2
-3 - focus space 3
-4 - focus space 4
-5 - focus space 5
-6 - focus space 6
-7 - focus space 7
-8 - focus space 8
-9 - focus space 9
-0 - focus space 10
+shift + q - move window to display west
+shift + e - move window to display east
 
-shift + 1 - move window space 1
-shift + 2 - move window space 2
-shift + 3 - move window space 3
-shift + 4 - move window space 4
-shift + 5 - move window space 5
-shift + 6 - move window space 6
-shift + 7 - move window space 7
-shift + 8 - move window space 8
-shift + 9 - move window space 9
-shift + 0 - move window space 10
+p - move window to previous space
+n - move window to next space
+
+shift + 1-0 - move window to space 1-10
+
+f - toggle window float
+m - toggle window zoom-fullscreen
 ```
-### Scratchpad Mode - prefix + s
+
+### Scratchpad Mode - f12 + s
 ```bash
-i - iMessage
-t - kitty
-m - Music mini player
-o - obsidian
-p - pureref (doesnt work quite right)
-c - calendar
-d - Discord
+t - toggle kitty terminal
+m - toggle Music app
+o - toggle Obsidian
+d - toggle Discord
+i - toggle Messages
+c - toggle Calendar
 ```
 
-### Restart Mode - prefix + r
+### App Mode - f12 + a
+```bash
+a - open Arc browser
+c - open ChatGPT
+d - open Logic Pro X
+f - open Finder
+l - open Adobe Lightroom
+m - open Proton Mail
+p - open Adobe Photoshop
+r - open DaVinci Resolve
+t - open kitty terminal
+v - open Visual Studio Code
+
+backspace - quit current app
+```
+
+### Restart Mode - f12 + r
 ```bash
 y - restart yabai
 s - restart skhd
