@@ -21,7 +21,7 @@ active < p : skhd -k 'alt - end'
 
 scratchpad, window, active, restart, app < escape ; default
 scratchpad, window, active, restart, app < return ; default
-scratchpad, window, active, restart, app < f19 ; active
+scratchpad, window, active, restart, app < f12 ; active
 
 # change window focus within space
 window < s : yabai -m window --focus south
@@ -106,7 +106,7 @@ scratchpad < m : yabai -m window --toggle music || open  -a Music ; skhd -k 'esc
 scratchpad < o : yabai -m window --toggle obsidian || open  -a Obsidian ; skhd -k 'escape'
 scratchpad < d : yabai -m window --toggle discord || open  -a Discord ; skhd -k 'escape'
 scratchpad < i : yabai -m window --toggle messages || open  -a Messages ; skhd -k 'escape'
-scratchpad < p : yabai -m window --toggle pureref || open  -a PureRef ; skhd -k 'escape'
+# scratcshpad < p : yabai -m window --toggle pureref || open  -a PureRef ; skhd -k 'escape'
 scratchpad < c : yabai -m window --toggle calendar || open  -a Calendar ; skhd -k 'escape'
 
 # Apps

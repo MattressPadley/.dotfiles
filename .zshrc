@@ -55,13 +55,17 @@ alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/D
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 alias lst="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree"
 
-Dev() {
+dev() {
     local dir
     dir=$(fd . ~/Dev --type d --exclude .git | fzf --preview 'eza --tree --level 1 --color=always {} | head -200')
     if [[ -n "$dir" ]]; then
         cd ~
         cd "$dir"
     fi
+}
+
+portkill() {
+    lsof -i tcp:$1 | awk 'NR!=1 {print $2}' | xargs kill
 }
 
 repo() {
