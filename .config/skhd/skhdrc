@@ -36,6 +36,10 @@ active < shift - right : yabai -m window --stack east
 active < up : yabai -m window --focus stack.prev
 active < down : yabai -m window --focus stack.next
 
+# connect headphone
+active < h : headphones
+
+#return to default mode
 scratchpad, window, active, restart, app < escape ; default
 scratchpad, window, active, restart, app < return ; default
 scratchpad, window, active, restart, app < f12 ; active

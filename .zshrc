@@ -57,9 +57,9 @@ alias lst="eza --color=always --long --git --icons=always --no-time --no-user --
 
 dev() {
     local dir
-    dir=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive | fzf --preview 'eza --tree --level 1 --color=always {} | head -200')
+    dir=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive -x echo {/} | fzf --preview 'eza --tree --level 1 --color=always ~/Dev/{} | head -200')
     if [[ -n "$dir" ]]; then
-        cd "$dir"
+        cd ~/Dev/"$dir"
     fi
 }
 
@@ -91,6 +91,7 @@ alias upconf="zsh ~/.dotfiles/scripts/dotfiles-update.sh"
 alias sophie="ssh mhadley@sophie.mattresspad.link"
 alias totoro="ssh mhadley@totoro.mattresspad.link"
 alias log="sh log.sh"
+alias headphones="sh scripts/connect_headphones.sh"
 
 
 export PATH="/Users/mhadley/.local/bin:$PATH"
