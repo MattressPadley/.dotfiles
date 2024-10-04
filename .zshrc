@@ -7,6 +7,9 @@ plugins=(git poetry poetry-env gh)
 
 source $ZSH/oh-my-zsh.sh
 
+autoload -U compinit && compinit
+setopt correct
+
 
 # github
 compctl -K _gh gh
@@ -26,10 +29,20 @@ alias dotfiles="cd ~/.dotfiles"
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 alias lst="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree"
 
-Dev() {
+dev() {
     local dir
-    dir=$(fd . ~/Dev --type d --exclude .git | fzf --preview 'eza --tree --level 1 --color=always {} | head -200')
-    [[ -n "$dir" ]] && cd "$dir"
+    dir=$(fd . ~/dev --type d --max-depth 1 --exclude .git --exclude Z_Archive -x echo {/} | fzf --preview 'eza --tree --level 1 --color=always ~/Dev/{} | head -200')
+    if [[ -n "$dir" ]]; then
+        cd ~/Dev/"$dir"
+    fi
+}
+
+prod() {
+    local dir
+    dir=$(fd . ~/prod --type d --max-depth 1 --exclude .git -x echo {/} | fzf --preview 'eza --tree --level 1 --color=always ~/prod/{} | head -200')
+    if [[ -n "$dir" ]]; then
+        cd ~/prod/"$dir"
+    fi
 }
 
 repo() {
@@ -47,12 +60,17 @@ repo() {
   done | fzf \
     --preview 'gh repo view {} | glow ' \
     --preview-window up:70%:wrap \
-    | xargs -I {} gh repo view {} -w
+    | {
+      read -r nameWithOwner
+      if [[ "$1" == "open" ]]; then
+        gh repo view "$nameWithOwner" -w
+      else
+        gh repo view "$nameWithOwner" --json url -q .url
+      fi
+    }
 }
 
 #scripts
-alias ma3="sh ma3.sh"
-alias upconf="zsh ~/.dotfiles/scripts/dotfiles-update.sh"
 alias sophie="ssh mhadley@sophie.mattresspad.link"
 alias totoro="ssh mhadley@totoro.mattresspad.link"
 alias log="sh log.sh"
@@ -76,8 +94,6 @@ export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
 # Advanced customization of fzf options via _fzf_comprun function
-# - The first argument to the function is the name of the command.
-# - You should make sure to pass the rest of the arguments to fzf.
 _fzf_comprun() {
   local command=$1
   shift
@@ -86,6 +102,7 @@ _fzf_comprun() {
     cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
     export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
     ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    git)          repo                                     "$@" ;;  # Ensure 'repo' function is used for git
     *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
   esac
 }
@@ -122,5 +139,4 @@ eval "$(zoxide init zsh)"
 
 # ---- Starship -----
 eval "$(starship init zsh)"
-
 
