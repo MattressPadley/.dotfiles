@@ -69,6 +69,11 @@ portkill() {
 }
 
 repo() {
+  local url_only=0
+  if [ "$1" = "--url" ]; then
+    url_only=1
+  fi
+
   # Create an empty array to hold owners (your username and organizations)
   owners=('MattressPadley')  # Adds your username from your GitHub profile
 
@@ -78,12 +83,19 @@ repo() {
   done < <(gh org list)
 
   # Loop through each specified owner and list their repositories
-  for owner in "${owners[@]}"; do
+  selected=$(for owner in "${owners[@]}"; do
     gh repo list $owner --json nameWithOwner | jq -r '.[].nameWithOwner'
   done | fzf \
     --preview 'gh repo view {} | glow ' \
-    --preview-window up:70%:wrap \
-    | xargs -I {} gh repo view {} -w
+    --preview-window up:70%:wrap)
+
+  if [ -n "$selected" ]; then
+    if [ $url_only -eq 1 ]; then
+      gh repo view $selected --json url --jq .url
+    else
+      gh repo view $selected -w
+    fi
+  fi
 }
 
 #scripts
@@ -123,6 +135,7 @@ _fzf_comprun() {
     cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
     export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
     ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    git)          repo --url "$@" ;;
     *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
   esac
 }
