@@ -19,6 +19,13 @@ update() {
 
   args+=(--remove '/github.notification\.*/')
 
+  # Add separator and mark all read button if there are notifications
+  if [ "$COUNT" -gt 0 ]; then
+    args+=(--set github.mark.read drawing=on)
+  else
+    args+=(--set github.mark.read drawing=off)
+  fi
+
   COUNTER=0
   COLOR=$MAUVE
   args+=(--set github.bell icon.color=$COLOR)
