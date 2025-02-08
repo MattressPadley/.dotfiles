@@ -1,0 +1,127 @@
+{
+    "git.openRepositoryInParentFolders": "never",
+    "git.ignoreRebaseWarning": true,
+    "prettier.singleQuote": true,
+    "prettier.singleAttributePerLine": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.fontFamily": "UbuntuSansMono Nerd Font",
+    "editor.fontSize": 10,
+    "editor.fontLigatures": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.autohide": false,
+    "editor.inlineSuggest.enabled": true,
+    "editor.smoothScrolling": true,
+    "editor.lightbulb.enabled": "off",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "line",
+    "editor.lineHeight": 1.6,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.hideCursorInOverviewRuler": false,
+    "editor.overviewRulerBorder": false,
+    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.sideBar.location": "right",
+    "workbench.list.smoothScrolling": true,
+    "workbench.editor.scrollToSwitchTabs": true,
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.visible": false,
+    "workbench.editor.showTabs": "single",
+    "workbench.tips.enabled": false,
+    "workbench.activityBar.location": "hidden",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 10000,
+    "breadcrumbs.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.compactFolders": false,
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.fontFamily": "UbuntuSansMono Nerd Font",
+    "terminal.integrated.tabs.enabled": false,
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+
+    "custom-ui-style.electron": {
+        "frame": false,
+        "titleBarStyle": "customButtonsOnHover"
+    },
+    "custom-ui-style.stylesheet": {
+        ".monaco-workbench .part > .title > .title-label": "display: none",
+        ".title-actions": "display: none !important"
+    },
+    
+    "custom-ui-style.reloadWithoutPrompting": true,
+    // "apc.electron": {
+    //     "titleBarStyle": "customButtonsOnHover",
+    //     "frame": false
+    // },
+    // "apc.font.family": "UbuntuSans Nerd Font",
+    // "apc.menubar.compact": true,
+    // "apc.activityBar": {
+    
+    //     "size": 40,
+    //     "itemSize": 40,
+    //     "itemMargin": 0
+    // },
+    // "apc.sidebar.titlebar": {
+    //     "height": 30,
+    //     "fontSize": 10
+    // },
+    // "apc.statusBar": {
+    //     "position": "editor-bottom",
+    //     "fontSize": 10,
+    //     "height": 15
+    // },
+    // "apc.header": {
+    //     "height": 30,
+    //     "fontSize": 12
+    // },
+    // "apc.listRow": {
+    //     "lists": [
+    //         "explorer-folders-view",
+    //         "quick-input-list",
+    //         "results"
+    //     ],
+    //     "height": 19,
+    //     "fontSize": 12
+    // },
+    // "apc.stylesheet": {
+    //     ".monaco-workbench .part > .title > .title-label": "display: none",
+    //     ".title-actions": "display: none !important"
+    // },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "extensions.ignoreRecommendations": true,
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "redhat.telemetry.enabled": true,
+    "[code-text-binary]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "diffEditor.maxComputationTime": 0,
+    "animations.Install-Method": "Custom UI Style",
+    "apc.imports": [
+        "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+    ],
+    "cursor.cpp.enablePartialAccepts": true,
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "cursor.chat.showSuggestedFiles": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native",
+    "editor.minimap.enabled": true,
+    "animations.Enabled": true,
+    "custom-ui-style.external.imports": [
+        "file:///Users/mhadley/.cursor/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+    ]
+}

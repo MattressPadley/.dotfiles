@@ -92,7 +92,7 @@ yabai -m rule --add app="^PureRef$" scratchpad=pureref grid=11:11:1:1:9:9
 yabai -m rule --add app="^Calendar$" scratchpad=calendar grid=11:11:1:1:9:9 
 
 
-borders active_color=0xff89b4fa width=10.0 blur_radius=0 &
+borders active_color=0xff89b4fa width=10.0 blur_radius=0.75
 
 # S K E T C H Y B A R  E V E N T S
 yabai -m signal --add event=window_focused action="sketchybar -m --trigger window_focus &> /dev/null"
