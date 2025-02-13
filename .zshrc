@@ -41,6 +41,7 @@ PATH="$PATH:~/.dotfiles/scripts"
 
 
 # command changes or abbreviations
+alias dev="source ~/.dotfiles/scripts/dev.sh"
 alias pip="pip3"
 alias python="python3"
 alias vi="nvim"
@@ -55,14 +56,6 @@ alias dotfiles="cd ~/.dotfiles"
 alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 alias lst="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree"
-
-dev() {
-    local dir
-    dir=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive -x echo {/} | fzf --preview 'eza --tree --level 1 --color=always ~/Dev/{} | head -200')
-    if [[ -n "$dir" ]]; then
-        cd ~/Dev/"$dir"
-    fi
-}
 
 portkill() {
     lsof -i tcp:$1 | awk 'NR!=1 {print $2}' | xargs kill
