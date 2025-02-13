@@ -110,6 +110,7 @@ window < m : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger wind
 # window < shift - space : yabai -m space --layout bsp
 
 #Scratchpads
+scratchpad < f : yabai -m window --toggle finder || open -a Finder --args -sc {path} ; skhd -k 'escape'
 scratchpad < t : yabai -m window --toggle kitty || kitty --title=Scratchpad ~; skhd -k 'escape'
 scratchpad < m : yabai -m window --toggle music || open  -a Music ; skhd -k 'escape'
 scratchpad < o : yabai -m window --toggle obsidian || open  -a Obsidian ; skhd -k 'escape'

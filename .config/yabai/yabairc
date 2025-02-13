@@ -83,6 +83,7 @@ yabai -m rule --add app="^Blender$" opacity=1.0
 yabai -m rule --add app="^Messages$" manage=off
 
 # Scratch Pads
+yabai -m rule --add app="^Finder$" scratchpad=finder grid=11:11:4:1:6:9
 yabai -m rule --add app="^Music$" title="^MiniPlayer$" scratchpad=music grid=11:11:9:1:2:8
 yabai -m rule --add app="^kitty$" title="^Scratchpad$" scratchpad=kitty grid=11:11:4:1:6:9
 yabai -m rule --add app="^Discord$" scratchpad=discord grid=11:11:4:1:6:9
