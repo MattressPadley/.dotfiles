@@ -123,5 +123,8 @@
     "animations.Enabled": true,
     "custom-ui-style.external.imports": [
         "file:///Users/mhadley/.cursor/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-    ]
+    ],
+    "cursor.aipreview.enabled": true,
+    "cursor.diffs.useCharacterLevelDiffs": true,
+    "cursor.general.enableShadowWorkspace": true
 }
