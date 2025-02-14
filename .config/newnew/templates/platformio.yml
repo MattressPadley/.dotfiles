@@ -3,10 +3,10 @@ description: An embedded project using PlatformIO
 emoji: 🤖
 
 variables:
-  board:
+  - name: board
     prompt: Board type
     default: esp32dev
-  use_github:
+  - name: use_github
     prompt: Create GitHub repository?
     type: boolean
     default: false

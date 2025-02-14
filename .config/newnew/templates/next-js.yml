@@ -1,0 +1,50 @@
+name: Next.js
+description: A Next.js project with TypeScript
+emoji: ⚡
+
+variables:
+  - name: use_github
+    prompt: Create GitHub repository?
+    type: boolean
+    default: false
+  
+  - name: docker
+    prompt: "Add Docker setup?"
+    type: boolean
+    default: false
+
+steps:
+  - name: Create Next.js project
+    run: npx create-next-app@latest {project_dir} --typescript --app --src-dir
+    check: node
+    error: Node.js is not installed. Please install from https://nodejs.org
+
+  - name: Initialize git
+    if: use_github
+    run: git init
+
+  - name: Setup Docker
+    if: docker
+    copy:
+      from: next-js/docker-compose.yml
+      to: docker-compose.yml
+
+  - name: Setup Justfile
+    if: docker
+    copy:
+        from: next-js/Justfile.docker
+        to: justfile
+  
+  - name: No Docker Justfile
+    if-not: docker
+    copy:
+      from: next-js/Justfile.standard
+      to: justfile
+
+  - name: Create GitHub repository
+    if: use_github
+    run: |
+      git add .
+      git commit -m 'Initial commit'
+      gh repo create {project_name} --private --source=. --remote=origin
+      git push -u origin main

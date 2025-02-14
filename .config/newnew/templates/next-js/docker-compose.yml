@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    image: node:18-alpine
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+    command: sh -c "npm install && npm run dev" 

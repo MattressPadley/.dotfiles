@@ -1,0 +1,33 @@
+# List all recipes
+default:
+    @just --list
+
+# Start development environment
+dev:
+    docker compose up
+
+# Stop development environment
+stop:
+    docker compose down
+
+# Install dependencies in container
+install:
+    docker compose run --rm web npm install
+
+# Add a new dependency
+add package:
+    docker compose run --rm web npm install {{package}}
+
+# Add a dev dependency
+add-dev package:
+    docker compose run --rm web npm install -D {{package}}
+
+# Run any npm script
+run script:
+    docker compose run --rm web npm run {{script}}
+
+# Clean all docker artifacts and build files
+clean:
+    docker compose down --volumes
+    rm -rf .next
+    rm -rf node_modules 
