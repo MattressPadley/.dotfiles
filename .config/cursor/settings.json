@@ -126,5 +126,34 @@
     ],
     "cursor.aipreview.enabled": true,
     "cursor.diffs.useCharacterLevelDiffs": true,
-    "cursor.general.enableShadowWorkspace": true
+    "cursor.general.enableShadowWorkspace": true,
+    "pymakr.devices.configs": {
+        "serial:///dev/tty.debug-console": {
+            "autoConnect": "onLostConnection",
+            "name": "",
+            "username": "micro",
+            "password": "python",
+            "hidden": false,
+            "rootPath": null,
+            "adapterOptions": {}
+        },
+        "serial:///dev/tty.wlan-debug": {
+            "autoConnect": "onLostConnection",
+            "name": "",
+            "username": "micro",
+            "password": "python",
+            "hidden": false,
+            "rootPath": null,
+            "adapterOptions": {}
+        },
+        "serial:///dev/tty.Bluetooth-Incoming-Port": {
+            "autoConnect": "onLostConnection",
+            "name": "",
+            "username": "micro",
+            "password": "python",
+            "hidden": false,
+            "rootPath": null,
+            "adapterOptions": {}
+        }
+    }
 }

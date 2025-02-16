@@ -55,6 +55,7 @@ yabai -m config window_animation_easing easeIn
 
 # Dont manage
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^sacn_example$" manage=off
 yabai -m rule --add app="^app_gma3$" manage=on
 yabai -m rule --add app="^grandMA3$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
