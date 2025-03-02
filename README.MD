@@ -25,6 +25,7 @@ all colors are based on catppuccin mocha
 - git
 - gh
 - zoxide
+- yazi
 
 ## Fonts
 

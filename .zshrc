@@ -48,6 +48,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias py="python3"
 alias z="zed"
+alias y="yazi"
 alias c="code ."
 alias lg="lazygit"
 alias ld="lazydocker"
@@ -155,7 +156,7 @@ export BAT_THEME="Catppuccin Mocha"
 
 # ---- Eza (better ls) -----
 
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 
 # thefuck alias
 eval $(thefuck --alias)
@@ -168,4 +169,8 @@ eval "$(starship init zsh)"
 
 # ---- Rust ------
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# ---- ZSH Syntax Highlighting -----
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 

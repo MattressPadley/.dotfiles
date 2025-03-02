@@ -28,6 +28,8 @@ brew = [
     "trash",
     "yabai",
     "zoxide",
+    "yazi",
+    "zsh-syntax-highlighting",
     "zsh-autosuggestions",
     "zsh-completions"
 ]
