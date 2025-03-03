@@ -52,6 +52,7 @@ alias y="yazi"
 alias c="code ."
 alias lg="lazygit"
 alias ld="lazydocker"
+alias icloud="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/"
 alias home="cd ~"
 alias dotfiles="cd ~/.dotfiles"
 alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
@@ -100,7 +101,8 @@ alias totoro="ssh mhadley@totoro.mattresspad.link"
 alias log="sh log.sh"
 alias headphones="sh scripts/connect_headphones.sh"
 
-
+export EDITOR="nvim"
+export HOMEBREW_BUNDLE_FILE="$HOME/.config/brewfile/Brewfile"
 export PATH="/Users/mhadley/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"

@@ -4,6 +4,10 @@ all colors are based on catppuccin mocha
 
 ## Installation
 
+```bash
+curl -fsSL https://raw.githubusercontent.com/MattressPadley/.dotfiles/main/scripts/bootstrap.sh | bash
+```
+
  at your own risk
 
 ## Used Apps
@@ -29,7 +33,6 @@ all colors are based on catppuccin mocha
 
 ## Fonts
 
-- SF pro
 - SF symbols
 - sketchybar app font
 - ubuntu sans mono nerd font

@@ -127,7 +127,6 @@
     "cursor.aipreview.enabled": true,
     "cursor.diffs.useCharacterLevelDiffs": true,
     "cursor.general.enableShadowWorkspace": true,
-<<<<<<< Updated upstream
     "pymakr.devices.configs": {
         "serial:///dev/tty.debug-console": {
             "autoConnect": "onLostConnection",
@@ -157,10 +156,8 @@
             "adapterOptions": {}
         }
     }
-=======
     "cmake.pinnedCommands": [
         "workbench.action.tasks.configureTaskRunner",
         "workbench.action.tasks.runTask"
     ]
->>>>>>> Stashed changes
 }

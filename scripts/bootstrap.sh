@@ -7,16 +7,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Read package names from a TOML file
-casks=$(cat packages.toml | grep -oP '(?<=cask = \[).*(?=\])' | tr -d '[" ]')
-packages=$(cat packages.toml | grep -oP '(?<=brew = \[).*(?=\])' | tr -d '[" ]')
-
-# Install Homebrew Casks
-brew tap $casks
-# Install Homebrew packages
-for package in "${packages[@]}"; do
-    brew install "$package"
-done
+brew bundle install --file ~/.config/brewfile/Brewfile
 
 # Font
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/latest/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
@@ -31,6 +22,10 @@ defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
 git clone https://github.com/MattressPadley/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 stow .
+
+ya pack -a yazi-rs/plugins:full-borderi
+ya pack -a yazi-rs/plugins:git
+ya pack -a yazi-rs/plugins:mount
 
 yabai --start-service
 skhd --start-service
