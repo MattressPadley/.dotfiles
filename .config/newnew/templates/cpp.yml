@@ -1,0 +1,45 @@
+name: C++ Application
+description: Template for a basic C++ project
+emoji: 🤖
+
+variables:
+  - name: use_git
+    prompt: "Initialize a Git repository?"
+    type: boolean
+    default: true
+
+steps:
+  - name: Create project directory
+    run: |
+      mkdir -p {project_dir}/src
+      mkdir -p {project_dir}/include
+
+  - name: Add main.cpp
+    copy:
+      from: cpp/main.cpp
+      to: src/main.cpp
+
+  - name: Add CMakeLists.txt
+    run: |
+      touch {project_dir}/CMakeLists.txt
+      echo "cmake_minimum_required(VERSION 3.10)" >> {project_dir}/CMakeLists.txt
+      echo "project({project_name})" >> {project_dir}/CMakeLists.txt
+      echo "set(CMAKE_CXX_STANDARD 17)" >> {project_dir}/CMakeLists.txt
+      echo "add_executable(main src/main.cpp)" >> {project_dir}/CMakeLists.txt
+
+  - name: Add .gitignore
+    if: use_git
+    copy:
+      from: cpp/gitignore
+      to: .gitignore
+
+  - name: Initialize Git repository
+    if: use_git
+    check: git
+    error: "Git is not installed"
+    run: |
+      git init
+      git add .
+      git commit -m 'Initial commit'
+      gh repo create {project_dir} --private --source=. --remote=origin
+      git push -u origin main

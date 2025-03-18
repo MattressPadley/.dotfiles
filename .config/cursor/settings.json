@@ -47,10 +47,10 @@
         "frame": false,
         "titleBarStyle": "customButtonsOnHover"
     },
-    "custom-ui-style.stylesheet": {
-        ".monaco-workbench .part > .title > .title-label": "display: none",
-        ".title-actions": "display: none !important"
-    },
+    // "custom-ui-style.stylesheet": {
+    //     ".monaco-workbench .part > .title > .title-label": "display: none",
+    //     ".title-actions": "display: none !important"
+    // },
     
     "custom-ui-style.reloadWithoutPrompting": true,
     // "apc.electron": {
@@ -155,9 +155,6 @@
             "rootPath": null,
             "adapterOptions": {}
         }
-    }
-    "cmake.pinnedCommands": [
-        "workbench.action.tasks.configureTaskRunner",
-        "workbench.action.tasks.runTask"
-    ]
+    },
+    "lldb.suppressUpdateNotifications": true
 }
