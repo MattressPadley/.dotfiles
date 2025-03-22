@@ -62,6 +62,39 @@ if [ "$1" = "clean" ]; then
             echo "Deletion cancelled"
         fi
     fi
+elif [ "$1" = "clone" ]; then
+    # Create an empty array to hold owners (your username and organizations)
+    owners=('MattressPadley' 'ato-rnd')  # Add your GitHub username and specific organizations here
+
+    # Append organizations to the owners array
+    while read -r org; do
+        owners+=("$org")
+    done < <(gh org list)
+
+    # Loop through each specified owner and list their repositories
+    selected=$(for owner in "${owners[@]}"; do
+        gh repo list $owner --json nameWithOwner,description,isPrivate --jq '.[] | "\(.nameWithOwner)\t\(if .isPrivate then "Private" else "Public" end)\t\(.description)"'
+    done | column -t -s $'\t' | fzf \
+        --preview 'repo_name=$(echo {} | awk "{print \$1}"); gh repo view $repo_name | glow' \
+        --preview-window up:70%:wrap \
+        --header "Select a repository to clone (ENTER to confirm)")
+
+    if [[ -n "$selected" ]]; then
+        # Extract the repository name from the selected line
+        repo_name=$(echo "$selected" | awk '{print $1}')
+        
+        # Clone the repository to ~/Dev directory
+        echo "Cloning $repo_name to ~/Dev..."
+        git clone "https://github.com/$repo_name.git" ~/Dev/"${repo_name#*/}"
+        
+        if [ $? -eq 0 ]; then
+            echo "Repository cloned successfully to ~/Dev/${repo_name#*/}"
+            # Print command to cd into the new directory
+            echo "cd ~/Dev/${repo_name#*/}"
+        else
+            echo "Failed to clone repository."
+        fi
+    fi
 else
     # Original directory navigation functionality
     dir=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive -x echo {/} | sort | \
