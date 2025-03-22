@@ -17,9 +17,11 @@ curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/lates
 # Install Rust 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-defaults write com.apple.dock autohide -bool true && killall Dock
-defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
-defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    defaults write com.apple.dock autohide -bool true && killall Dock
+    defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
+    defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
+fi
 
 git clone https://github.com/MattressPadley/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles

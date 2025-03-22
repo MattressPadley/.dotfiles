@@ -176,3 +176,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
