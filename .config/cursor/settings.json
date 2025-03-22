@@ -47,11 +47,19 @@
         "frame": false,
         "titleBarStyle": "customButtonsOnHover"
     },
-    // "custom-ui-style.stylesheet": {
-    //     ".monaco-workbench .part > .title > .title-label": "display: none",
-    //     ".title-actions": "display: none !important"
-    // },
-    
+    "custom-ui-style.stylesheet": {
+        ".monaco-workbench .part > .title > .title-label": "display: none",
+        ".title-actions": "display: none !important",
+        ".quick-input-widget": {
+            "box-shadow": "0 5px 10px rgba(0,0,0,0), 0 0 0 100vw rgba(0,0,0,0.15) !important",
+            "top": "25vh !important",
+          },
+          ".quick-input-widget .quick-input-list .quick-input-list-entry.quick-input-list-separator-border": {
+            "border-top-width": "0px !important"
+          },
+        },
+
+
     "custom-ui-style.reloadWithoutPrompting": true,
     // "apc.electron": {
     //     "titleBarStyle": "customButtonsOnHover",
@@ -91,6 +99,28 @@
     //     ".monaco-workbench .part > .title > .title-label": "display: none",
     //     ".title-actions": "display: none !important"
     // },
+
+    // Vim bindings
+    "vim.leader": "<Space>",
+    "vim.normalModeKeyBindings": [
+        // Navigation
+        {"before": ["w"], "after": ["k"]},
+        {"before": ["s"], "after": ["j"]},
+        {"before": ["a"], "after": ["h"]},
+        {"before": ["d"], "after": ["l"]},
+
+        // splits
+        {"before": ["leader", "v"], "commands": [":vsplit "]},
+        {"before": ["leader", "h"], "commands": [":split "]},
+   
+        //Pane Navigation
+        {"before": ["leader", "w"], "commands": ["workbench.action.focusAboveGroup"]},
+        {"before": ["leader", "s"], "commands": ["workbench.action.focusBelowGroup"]},
+        {"before": ["leader", "a"], "commands": ["workbench.action.focusLeftGroup"]},
+        {"before": ["leader", "d"], "commands": ["workbench.action.focusRightGroup"]}
+
+    ],
+
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
@@ -110,9 +140,6 @@
     },
     "diffEditor.maxComputationTime": 0,
     "animations.Install-Method": "Custom UI Style",
-    "apc.imports": [
-        "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
-    ],
     "cursor.cpp.enablePartialAccepts": true,
     "cursor.cmdk.useThemedDiffBackground": true,
     "cursor.chat.showSuggestedFiles": true,
