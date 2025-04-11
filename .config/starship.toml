@@ -13,6 +13,7 @@ $git_branch\
 $git_status\
 [](fg:yellow bg:sky)\
 $c\
+$cmake\
 $elixir\
 $elm\
 $golang\
@@ -20,6 +21,7 @@ $gradle\
 $haskell\
 $java\
 $julia\
+$meson\
 $nodejs\
 $nim\
 $rust\
@@ -88,6 +90,11 @@ symbol = " "
 style = "bg:sky"
 format = '[ $symbol ($version) ]($style)'
 
+[cmake]
+symbol = " "
+style = "bg:sky fg:base"
+format = '[ $symbol ($version) ]($style)'
+
 [python]
 symbol = " "
 style = "bg:sky fg:base"
@@ -138,6 +145,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [julia]
 symbol = " "
+style = "bg:sky fg:base"
+format = '[ $symbol ($version) ]($style)'
+
+[meson]
+symbol = " "
 style = "bg:sky fg:base"
 format = '[ $symbol ($version) ]($style)'
 

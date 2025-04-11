@@ -5,7 +5,7 @@
     "prettier.singleAttributePerLine": true,
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
-    "editor.fontFamily": "UbuntuSansMono Nerd Font",
+    "editor.fontFamily": "UbuntuSansMono Nerd Font, SF Pro",
     "editor.fontSize": 10,
     "editor.fontLigatures": true,
     "editor.minimap.renderCharacters": false,
@@ -183,5 +183,8 @@
             "adapterOptions": {}
         }
     },
-    "lldb.suppressUpdateNotifications": true
+    "lldb.suppressUpdateNotifications": true,
+    "mesonbuild.downloadLanguageServer": true,
+    "cmake.showConfigureWithDebuggerNotification": false,
+    "cursor.composer.shouldAllowCustomModes": true
 }
