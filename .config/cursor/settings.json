@@ -146,7 +146,6 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
     "lldb.launch.expressions": "native",
-    "editor.minimap.enabled": true,
     "animations.Enabled": true,
     "custom-ui-style.external.imports": [
         "file:///Users/mhadley/.cursor/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
@@ -186,5 +185,6 @@
     "lldb.suppressUpdateNotifications": true,
     "mesonbuild.downloadLanguageServer": true,
     "cmake.showConfigureWithDebuggerNotification": false,
-    "cursor.composer.shouldAllowCustomModes": true
+    "cursor.composer.shouldAllowCustomModes": true,
+    "editor.minimap.enabled": true
 }
