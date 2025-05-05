@@ -19,3 +19,12 @@
 
 2025/02/20 (05:57:19) | ===> btop++ v.1.4.0
 2025/02/20 (05:57:19) | ERROR: Exception in runner thread -> Proc:: -> basic_string
+
+2025/03/27 (20:19:14) | ===> btop++ v.1.4.0
+2025/03/27 (20:19:14) | ERROR: Exception in runner thread -> Proc:: -> basic_string
+
+2025/04/11 (11:56:35) | ===> btop++ v.1.4.0
+2025/04/11 (11:56:35) | ERROR: Exception in runner thread -> Proc:: -> basic_string
+
+2025/04/11 (12:07:07) | ===> btop++ v.1.4.0
+2025/04/11 (12:07:07) | ERROR: Stall in Runner thread, restarting!

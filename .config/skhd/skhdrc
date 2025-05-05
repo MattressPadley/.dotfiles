@@ -7,6 +7,7 @@
 :: window @ : borders active_color=0xff89dceb ; sketchybar --trigger skhd_mode MODE=Window
 :: restart @ : borders active_color=0xfff9e2af ; sketchybar --trigger skhd_mode MODE=Restart
 :: app @ : borders active_color=0xffa6e3a1 ; sketchybar --trigger skhd_mode MODE=App
+:: code @ : borders active_color=0xfffab387 ; sketchybar --trigger skhd_mode MODE=Code
 
 # Mode shifting
 default < f12 ; active
@@ -15,7 +16,7 @@ active < w ; window
 active < s ; scratchpad
 active < r ; restart
 active < a ; app
-
+active < c ; code
 
 # resize window
 active < right : yabai -m window --resize right:40:0 || yabai -m window --resize left:40:0
@@ -40,9 +41,9 @@ active < down : yabai -m window --focus stack.next
 active < h : headphones
 
 #return to default mode
-scratchpad, window, active, restart, app < escape ; default
-scratchpad, window, active, restart, app < return ; default
-scratchpad, window, active, restart, app < f12 ; active
+scratchpad, window, active, restart, app, code < escape ; default
+scratchpad, window, active, restart, app, code < return ; default
+scratchpad, window, active, restart, app, code < f12 ; active
 
 # change window focus within space
 window < s : yabai -m window --focus south
@@ -130,6 +131,26 @@ app < p : skhd -k 'escape' ; open -a 'Adobe Photoshop'
 app < r : skhd -k 'escape' ; open -a 'DaVinci Resolve'
 app < t : skhd -k 'escape' ; kitty --title 'Main' ~
 app < v : skhd -k 'escape' ; open -a 'Visual Studio Code'
+
+
+
+# Coding shortcuts
+# Movement
+code < w : skhd -k 'up'
+code < s : skhd -k 'down'
+code < a : skhd -k 'left'
+code < d : skhd -k 'right'
+code < shift - w : skhd -k 'shift - left'
+code < shift - s : skhd -k 'shift - left'
+code < shift - a : skhd -k 'shift - left'
+code < shift - d : skhd -k 'shift - left'
+code < alt - w : skhd -k 'alt - left'
+code < alt - s : skhd -k 'alt - left'
+code < alt - a : skhd -k 'alt - left'
+code < alt - d : skhd -k 'alt - left'
+
+# Search
+code < r : skhd -k 'f12'
 
 # Quit App
 app < backspace : skhd -k 'escape' ; osascript -e 'tell application "System Events" to keystroke "q" using {command down}'
