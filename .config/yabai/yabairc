@@ -64,6 +64,7 @@ yabai -m rule --add app="^VBAN Receptor$" manage=off
 yabai -m rule --add app="^Unreal Editor$" manage=off
 yabai -m rule --add app="^Synergy$" manage=off
 yabai -m rule --add app="^Python$" manage=off
+yabai -m rule --add app="^Vectorworks 2025$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Finder$" title="^Copy$" manage=off
 yabai -m rule --add app="^Arc$" title="^Matt$" manage=off
@@ -74,7 +75,8 @@ yabai -m rule --add app="^Arc$" subrole="^AXSystemDialog$" manage=off mouse_foll
 yabai -m rule --add app="^Noodl Editor$" opacity=1.0
 yabai -m rule --add app="^Adobe Lightroom$" opacity=1.0
 yabai -m rule --add app="^Arc$" opacity=1.0
-yabai -m rule --add app="^Adobe Photoshop 2024$" opacity=1.0
+yabai -m rule --add app="^Adobe Photoshop 2025$" opacity=1.0
+yabai -m rule --add app="^Vectorworks 2025$" opacity=1.0
 yabai -m rule --add app="^Lightroom Classic$" opacity=1.0
 yabai -m rule --add app="^DaVinci Resolve$" opacity=1.0
 # yabai -m rule --add app="^Code$" opacity=0.95
