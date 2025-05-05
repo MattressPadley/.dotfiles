@@ -183,5 +183,6 @@
             "adapterOptions": {}
         }
     },
-    "lldb.suppressUpdateNotifications": true
+    "lldb.suppressUpdateNotifications": true,
+    "cursor.composer.shouldAllowCustomModes": true
 }

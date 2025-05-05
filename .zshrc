@@ -178,3 +178,10 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+# bun completions
+[ -s "/Users/mhadley/.bun/_bun" ] && source "/Users/mhadley/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
