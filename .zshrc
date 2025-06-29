@@ -58,6 +58,7 @@ alias dotfiles="cd ~/.dotfiles"
 alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 alias lst="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree"
+alias ccusage="npx ccusage@latest blocks --live"
 
 portkill() {
     lsof -i tcp:$1 | awk 'NR!=1 {print $2}' | xargs kill
@@ -186,3 +187,5 @@ fpath+=~/.zfunc; autoload -Uz compinit; compinit
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claude="/Users/mhadley/.claude/local/claude"
