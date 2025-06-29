@@ -9,7 +9,7 @@ skhd=(
 )
 
 sketchybar --add event skhd_mode            \
-           --add item skhd center               \
+           --add item skhd q                 \
            --set skhd "${skhd[@]}"           \
            --subscribe skhd skhd_mode      \
 

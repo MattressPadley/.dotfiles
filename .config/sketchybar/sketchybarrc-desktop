@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Loading desktop config"
+
 source "$CONFIG_DIR/colors.sh"
 
 

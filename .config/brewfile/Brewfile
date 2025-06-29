@@ -1,15 +1,14 @@
 # taps
 tap "felixkratz/formulae"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "mattresspadley/tap"
+tap "homebrew/cask"
 
 # My Packages
 brew "bat"
 brew "btop"
 brew "docker-compose"
+brew "dysk"
 brew "eza"
 brew "fd"
 brew "fzf"
@@ -21,6 +20,7 @@ brew "glfw"
 brew "ifstat"
 brew "jq"
 brew "just"
+brew "kitty"
 brew "lazydocker"
 brew "lazygit"
 brew "lnav"
@@ -56,10 +56,16 @@ cask "bruno"
 brew "cmake"
 brew "cppcheck"
 brew "ninja"
-brew "meson "
 brew "doxygen"
 brew "sdl2"
 brew "shaderc"
+
+# Python
+brew "uv"
+
+#Javascript
+brew "node"
+brew "bun"
 
 brew "icu4c@76"
 brew "tinyxml2"

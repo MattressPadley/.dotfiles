@@ -17,11 +17,11 @@ yabai -m config window_placement second_child
 yabai -m config external_bar all:35:0
 
 # Set all padding and gaps to 20pt (default: 0)
-yabai -m config top_padding    15
-yabai -m config bottom_padding 15
-yabai -m config left_padding   15
-yabai -m config right_padding  15
-yabai -m config window_gap     15
+yabai -m config top_padding    5
+yabai -m config bottom_padding 5
+yabai -m config left_padding   10
+yabai -m config right_padding  10
+yabai -m config window_gap     5
 
 
 # set mouse interaction modifier key (default: fn)
@@ -37,7 +37,14 @@ yabai -m config mouse_action2 resize
 yabai -m config focus_follows_mouse autofocus
 
 # set mouse follows focus mode (default: off)
-yabai -m config mouse_follows_focus off
+MAIN_DISPLAY=$(system_profiler SPDisplaysDataType | grep -B 3 'Main Display:' | awk '/Display Type/ {print $3}')
+
+
+if [[ $MAIN_DISPLAY = "Built-in" ]]; then
+    yabai -m config mouse_follows_focus on
+else
+    yabai -m config mouse_follows_focus off
+fi
 
 # modify window shadows (default: on, options: on, off, float)
 # example: show shadows only for floating windows
@@ -54,6 +61,8 @@ yabai -m config window_animation_duration 0.1
 yabai -m config window_animation_easing easeIn
 
 # Dont manage
+yabai -m rule --add app="^WowUp-CF$" manage=off opacity=1.0
+yabai -m rule --add app="^Battle.net$" manage=off opacity=1.0
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^sacn_example$" manage=off
 yabai -m rule --add app="^app_gma3$" manage=on
@@ -92,11 +101,11 @@ yabai -m rule --add app="^kitty$" title="^Scratchpad$" scratchpad=kitty grid=11:
 yabai -m rule --add app="^Discord$" scratchpad=discord grid=11:11:4:1:6:9
 yabai -m rule --add app="^Obsidian$" scratchpad=obsidian grid=11:11:0:0:11:11
 yabai -m rule --add app="^Messages$" scratchpad=messages grid=11:11:4:1:6:9
-yabai -m rule --add app="^PureRef$" scratchpad=pureref grid=11:11:1:1:9:9
+yabai -m rule --add app="^Proton Pass$" scratchpad=protonpass grid=11:11:4:1:6:9
 yabai -m rule --add app="^Calendar$" scratchpad=calendar grid=11:11:1:1:9:9 
 
 
-borders active_color=0xff89b4fa width=10.0 blur_radius=0.75
+borders active_color=0xff89b4fa width=5.0 blur_radius=0.75
 
 # S K E T C H Y B A R  E V E N T S
 yabai -m signal --add event=window_focused action="sketchybar -m --trigger window_focus &> /dev/null"

@@ -10,6 +10,7 @@
 :: code @ : borders active_color=0xfffab387 ; sketchybar --trigger skhd_mode MODE=Code
 
 # Mode shifting
+default < f13 ; active
 default < f12 ; active
 active < f12 ; default
 active < w ; window
@@ -34,8 +35,8 @@ active < shift - left : yabai -m window --stack west
 active < shift - right : yabai -m window --stack east
 
 # focus stack
-active < up : yabai -m window --focus stack.prev
-active < down : yabai -m window --focus stack.next
+alt - up : yabai -m window --focus stack.prev
+alt - down : yabai -m window --focus stack.next
 
 # connect headphone
 active < h : headphones
@@ -46,14 +47,14 @@ scratchpad, window, active, restart, app, code < return ; default
 scratchpad, window, active, restart, app, code < f12 ; active
 
 # change window focus within space
-window < s : yabai -m window --focus south
-window < w : yabai -m window --focus north
-window < a : yabai -m window --focus west
-window < d : yabai -m window --focus east
+alt - s : yabai -m window --focus south
+alt - w : yabai -m window --focus north
+alt - a : yabai -m window --focus west
+alt - d : yabai -m window --focus east
 
 # change focus between external displays (left and right)
-window < q : yabai -m display --focus west
-window < e : yabai -m display --focus east
+alt - q : yabai -m display --focus west
+alt - e : yabai -m display --focus east
 
 # focus space window to space #
 window < 1 : yabai -m space --focus 1;
@@ -117,7 +118,7 @@ scratchpad < m : yabai -m window --toggle music || open  -a Music ; skhd -k 'esc
 scratchpad < o : yabai -m window --toggle obsidian || open  -a Obsidian ; skhd -k 'escape'
 scratchpad < d : yabai -m window --toggle discord || open  -a Discord ; skhd -k 'escape'
 scratchpad < i : yabai -m window --toggle messages || open  -a Messages ; skhd -k 'escape'
-# scratcshpad < p : yabai -m window --toggle pureref || open  -a PureRef ; skhd -k 'escape'
+scratchpad < p : yabai -m window --toggle protonpass || open  -a ProtonPass ; skhd -k 'escape'
 scratchpad < c : yabai -m window --toggle calendar || open  -a Calendar ; skhd -k 'escape'
 
 # Apps

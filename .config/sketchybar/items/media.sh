@@ -16,7 +16,7 @@ music_liked=(
     updates=on
 )
 
-sketchybar --add item media center \
+sketchybar --add item media e \
            --set media "${media[@]}" \
            --subscribe media media_change
 

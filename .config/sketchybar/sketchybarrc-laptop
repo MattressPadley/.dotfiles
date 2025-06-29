@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Loading laptop config"
+
 source "$CONFIG_DIR/colors.sh"
 
 

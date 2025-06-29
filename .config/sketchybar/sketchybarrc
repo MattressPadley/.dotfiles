@@ -18,7 +18,7 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=35
+  height=33
   color=$BAR_COLOR
   border_width=0
   border_color=$BAR_BORDER_COLOR
@@ -29,7 +29,7 @@ bar=(
   padding_right=10
   padding_left=10
   y_offset=5
-  margin=15
+  margin=10
   topmost=window
   corner_radius=6
 )
@@ -70,6 +70,8 @@ sketchybar --default "${defaults[@]}"
 sketchybar -m --add event window_focus \
               --add event title_change
 
+
+
 # Toggle the bar
 source "$ITEM_DIR/toggle.sh"
 
@@ -79,7 +81,7 @@ source "$ITEM_DIR/toggle.sh"
 MAIN_DISPLAY=$(system_profiler SPDisplaysDataType | grep -B 3 'Main Display:' | awk '/Display Type/ {print $3}')
 
 
-if [[ $MAIN_DISPLAY = "Built-In" ]]; then
+if [[ $MAIN_DISPLAY = "Built-in" ]]; then
     source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
 else
     source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"

@@ -22,6 +22,10 @@ volume_change() {
              --set $NAME slider.percentage=$INFO
 
   INITIAL_WIDTH="$(sketchybar --query $NAME | jq -r ".slider.width")"
+  if [ -z "$INITIAL_WIDTH" ] || ! [ "$INITIAL_WIDTH" -eq "$INITIAL_WIDTH" ] 2>/dev/null; then
+    INITIAL_WIDTH=0
+  fi
+  
   if [ "$INITIAL_WIDTH" -eq "0" ]; then
     sketchybar --animate tanh 30 --set $NAME slider.width=$WIDTH 
   fi
