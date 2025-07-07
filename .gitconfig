@@ -13,6 +13,4 @@
 [pull]
 	rebase = false
 [credential]
-	helper = osxkeychain
-	helper = 
 	helper = /usr/local/bin/git-credential-manager
