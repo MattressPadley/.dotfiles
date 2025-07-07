@@ -30,6 +30,7 @@ brew "platformio"
 brew "portaudio"
 brew "starship"
 brew "stow"
+brew "ripgrep"
 brew "thefuck"
 brew "tmux"
 brew "trash", link: true

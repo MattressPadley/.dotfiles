@@ -1,16 +1,6 @@
 #!/bin/bash
 
-if [ "$1" = "cd" ]; then
-    # Directory navigation functionality (original default behavior)
-    dir=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive -x echo {/} | sort | \
-        fzf --preview 'eza --tree --level 1 --color=always ~/Dev/{} | head -200')
-
-    if [[ -n "$dir" ]]; then
-        cd ~/Dev/"$dir" || exit
-        # Need to execute this to affect parent shell
-        echo "cd ~/Dev/$dir"
-    fi
-elif [ "$1" = "clean" ]; then
+if [ "$1" = "clean" ]; then
     # For cleaning, show git status in preview and allow multiple selections
     dirs=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive -x echo {/} | sort | \
         fzf -m --preview 'preview_dir=~/Dev/{}; \
@@ -124,53 +114,13 @@ elif [ "$1" = "clone" ]; then
         fi
     fi
 else
-    # Default behavior: create/attach to tmux session for selected project
+    # Original directory navigation functionality
     dir=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive -x echo {/} | sort | \
         fzf --preview 'eza --tree --level 1 --color=always ~/Dev/{} | head -200')
 
     if [[ -n "$dir" ]]; then
-        # Sanitize directory name for tmux session name (replace special chars with underscore)
-        session_name=$(echo "$dir" | sed 's/[^a-zA-Z0-9_-]/_/g')
-        project_path="$HOME/Dev/$dir"
-        
-        # Check if tmux session exists
-        if tmux has-session -t "$session_name" 2>/dev/null; then
-            # Session exists
-            if [ -n "$TMUX" ]; then
-                # We're already in tmux, switch to the session
-                tmux switch-client -t "$session_name"
-            else
-                # Not in tmux, attach to the session
-                tmux attach-session -t "$session_name"
-            fi
-        else
-            # Get terminal dimensions
-            COLS=$(tput cols)
-            LINES=$(tput lines)
-            
-            # Create new session with specific dimensions
-            tmux new-session -d -s "$session_name" -c "$project_path" -x "$COLS" -y "$LINES"
-            
-            # Split window vertically with right pane at 33%
-            tmux split-window -h -t "$session_name:0" -c "$project_path" -p 33
-            
-            # Start vi in the left pane (67% width)
-            tmux send-keys -t "$session_name:0.0" 'vi' Enter
-            
-            # Start claude in the right pane (33% width)
-            tmux send-keys -t "$session_name:0.1" 'claude' Enter
-            
-            # Select left pane as active
-            tmux select-pane -t "$session_name:0.0"
-            
-            # Attach to or switch to the session
-            if [ -n "$TMUX" ]; then
-                # We're already in tmux, switch to the new session
-                tmux switch-client -t "$session_name"
-            else
-                # Not in tmux, attach to the session
-                tmux attach-session -t "$session_name"
-            fi
-        fi
+        cd ~/Dev/"$dir" || exit
+        # Need to execute this to affect parent shell
+        echo "cd ~/Dev/$dir"
     fi
 fi
