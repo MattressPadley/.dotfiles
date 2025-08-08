@@ -1,26 +1,46 @@
 #!/bin/bash
 
-media=(
+media_artwork=(
   icon.background.drawing=on
-  icon.background.image=media.artwork
   icon.background.image.corner_radius=6
   script="$PLUGIN_DIR/media.sh"
-  label.max_chars=15
-  scroll_texts=on
   updates=on
+  update_freq=5
+  padding_left=0
+  padding_right=0
+  label.drawing=off
+  icon.padding_right=5
 )
 
-music_liked=(
-    script="$PLUGIN_DIR/music.sh"
-    click_script="$PLUGIN_DIR/music_click.sh"
-    updates=on
+media_track=(
+  label.max_chars=20
+  scroll_texts=on
+  y_offset=5
+  width=0
+  padding_left=0
+  padding_right=0
+  background.drawing=off
 )
 
-sketchybar --add item media e \
-           --set media "${media[@]}" \
-           --subscribe media media_change
+media_artist=(
+  label.max_chars=20
+  scroll_texts=on
+  y_offset=-6
+  width=0
+  padding_left=0
+  padding_right=0
+  label.color=0xff6c7086
+  background.drawing=off
+)
 
-sketchybar -m --add event song_update com.apple.iTunes.playerInfo
-sketchybar --add item music_liked center \
-           --set music_liked "${music_liked[@]}"\
-           --subscribe music_liked media_change song_update
+sketchybar --add item media_artwork e \
+           --set media_artwork "${media_artwork[@]}" \
+           --subscribe media_artwork media_change \
+\
+           --add item media_track e \
+           --set media_track "${media_track[@]}" \
+\
+           --add item media_artist e \
+           --set media_artist "${media_artist[@]}"
+
+# Song update event removed - using media-control instead
