@@ -58,7 +58,7 @@ alias dotfiles="~/.dotfiles/scripts/dotfiles-session.sh"
 alias obsidian="cd /Users/mhadley/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Personal"
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 alias lst="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree"
-alias ccusage="npx ccusage@latest blocks --live"
+#alias ccusage="npx ccusage@latest blocks --live"
 
 portkill() {
     lsof -i tcp:$1 | awk 'NR!=1 {print $2}' | xargs kill
