@@ -38,7 +38,7 @@ sketchybar --add item claude_usage.projection_value right \
   y_offset=-10 \
   width=0 \
   padding_left=0 \
-  padding_right=76 \
+  padding_right=84 \
   display=1 \
   \
   --add item claude_usage.usage_value right \
@@ -74,7 +74,7 @@ sketchybar --add item claude_usage.projection_value right \
   y_offset=0 \
   width=0 \
   padding_left=0 \
-  padding_right=76 \
+  padding_right=84 \
   display=1 \
   \
   --add item claude_usage.session_value right \
@@ -108,7 +108,7 @@ sketchybar --add item claude_usage.projection_value right \
   label.color=$BLUE \
   icon.drawing=off \
   y_offset=10 \
-  width=0 \
+  width=128 \
   padding_left=0 \
   padding_right=76 \
   display=1 \
