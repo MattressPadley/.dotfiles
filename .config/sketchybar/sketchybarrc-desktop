@@ -4,7 +4,6 @@ echo "Loading desktop config"
 
 source "$CONFIG_DIR/colors.sh"
 
-
 # -- Left Side Items --
 source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
@@ -20,15 +19,14 @@ source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/brew.sh"
 source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/docker.sh"
 source "$ITEM_DIR/cpu.sh"
 source "$ITEM_DIR/disk.sh"
 source "$ITEM_DIR/ram.sh"
 source "$ITEM_DIR/network.sh"
 source "$ITEM_DIR/claude_usage.sh"
-source "$ITEM_DIR/docker.sh"
 #source "$ITEM_DIR/wifi.sh"
 #source "$ITEM_DIR/control_center.sh"
-
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to

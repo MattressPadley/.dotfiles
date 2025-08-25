@@ -10,8 +10,8 @@ if ! /usr/local/bin/docker info >/dev/null 2>&1; then
     exit 0
 fi
 
-# Get running containers (just names for initial popup)
-CONTAINERS=$(/usr/local/bin/docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}" | tail -n +2)
+# Get running containers with ports (using custom format without table)
+CONTAINERS=$(/usr/local/bin/docker ps --format "{{.Names}}|{{.Image}}|{{.Status}}|{{.Ports}}")
 
 # Create popup items immediately
 args=(--remove '/docker\.container\.*/' --remove '/docker\.refresh/' --remove '/docker\.close/' --set docker.icon popup.drawing=toggle)
@@ -41,10 +41,8 @@ else
                                 padding_right=10)
     
     # Add each container with loading placeholders first
-    while IFS=$'\t' read -r name image status; do
+    while IFS='|' read -r name image status ports; do
         if [ -n "$name" ]; then
-            # Extract just the container name (first column)
-            name=$(echo "$name" | awk '{print $1}')
             
             # Format the container name (truncate if needed) - allow longer names
             DISPLAY_NAME="$name"
@@ -88,10 +86,8 @@ sketchybar -m "${args[@]}" > /dev/null
 # Now update each container with real stats in the background
 if [ -n "$CONTAINERS" ]; then
     COUNTER=0
-    while IFS=$'\t' read -r name image status; do
+    while IFS='|' read -r name image status ports; do
         if [ -n "$name" ]; then
-            # Extract just the container name (first column)
-            name=$(echo "$name" | awk '{print $1}')
             
             # Get real-time stats for this container
             CONTAINER_STATS=$(/usr/local/bin/docker stats --no-stream --format "{{.CPUPerc}} {{.MemUsage}}" "$name" 2>/dev/null)
@@ -110,7 +106,18 @@ if [ -n "$CONTAINERS" ]; then
                     [2][0-9]*) CPU_COLOR=$YELLOW ;;
                 esac
                 
-                STATS_LABEL="${CPU_PERC} ${MEM_USAGE}"
+                # Extract public port if available
+                PUBLIC_PORT=""
+                if [ -n "$ports" ]; then
+                    # Extract first public port mapping (e.g., "0.0.0.0:6379->6379/tcp" -> ":6379")
+                    PUBLIC_PORT=$(echo "$ports" | grep -o '0\.0\.0\.0:[0-9]*' | head -1 | sed 's/0\.0\.0\.0//')
+                    if [ -z "$PUBLIC_PORT" ]; then
+                        # Try localhost format
+                        PUBLIC_PORT=$(echo "$ports" | grep -o '127\.0\.0\.1:[0-9]*' | head -1 | sed 's/127\.0\.0\.1//')
+                    fi
+                fi
+                
+                STATS_LABEL="${CPU_PERC} ${MEM_USAGE} ${PUBLIC_PORT}"
             else
                 STATS_LABEL="-- --"
                 CPU_COLOR=$LABEL_COLOR
