@@ -192,6 +192,6 @@ alias claude="/Users/mhadley/.claude/local/claude"
 
 alias idfsetup="source '/Users/mhadley/esp/esp-idf/export.sh'"
 
-export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
 
 source .vault
+export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
