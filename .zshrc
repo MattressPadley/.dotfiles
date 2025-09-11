@@ -97,7 +97,7 @@ repo() {
 #scripts
 alias ma3="sh ma3.sh"
 alias upconf="zsh ~/.dotfiles/scripts/dotfiles-update.sh"
-alias sophie="ssh mhadley@sophie.mattresspad.link"
+alias sophie="~/.dotfiles/scripts/sophie-connect.sh"
 alias totoro="ssh mhadley@totoro.mattresspad.link"
 alias log="sh log.sh"
 alias headphones="sh scripts/connect_headphones.sh"
@@ -191,3 +191,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias claude="/Users/mhadley/.claude/local/claude"
 
 alias idfsetup="source '/Users/mhadley/esp/esp-idf/export.sh'"
+
+export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
+
+source .vault
