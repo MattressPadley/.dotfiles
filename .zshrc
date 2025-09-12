@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="xiong-chiamiov-plus"
 
 COMPLETION_WAITING_DOTS="true"
-plugins=(git macos poetry poetry-env gh dotenv zsh-uv-env uv docker docker-compose)
+plugins=(git macos poetry poetry-env gh uv docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

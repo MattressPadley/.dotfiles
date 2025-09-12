@@ -88,3 +88,4 @@ brew "opencv"
 brew "picocom"
 brew "tlrc"
 
+brew "tea"
