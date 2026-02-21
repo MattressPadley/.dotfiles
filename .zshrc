@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="xiong-chiamiov-plus"
+#
+
+export PATH="$HOME/.local/bin:$PATH"
 
 COMPLETION_WAITING_DOTS="true"
 plugins=(git macos poetry poetry-env gh uv docker docker-compose)
@@ -188,7 +191,6 @@ fpath+=~/.zfunc; autoload -Uz compinit; compinit
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-alias claude="/Users/mhadley/.claude/local/claude"
 
 alias idfsetup="source '/Users/mhadley/esp/esp-idf/export.sh'"
 

@@ -74,6 +74,7 @@ yabai -m rule --add app="^Vectorworks 2025$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Finder$" title="^Copy$" manage=off
 yabai -m rule --add app="^Arc$" title="^Matt$" manage=off
+yabai -m rule --add app="^ImGui Bundle App$" manage=off
 yabai -m rule --add app="^Arc$" subrole="^AXSystemDialog$" manage=off mouse_follows_focus=off
 
 # Not Tranparent
@@ -87,6 +88,7 @@ yabai -m rule --add app="^DaVinci Resolve$" opacity=1.0
 yabai -m rule --add app="^Blender$" opacity=1.0
 yabai -m rule --add app="^Shapr3D$" opacity=1.0
 yabai -m rule --add app="^KiCad$" opacity=1.0
+yabai -m rule --add app="^Plex$" opacity=1.0
 
 # Scratch Pads
 yabai -m rule --add app="^Finder$" scratchpad=finder grid=11:11:4:1:6:9
