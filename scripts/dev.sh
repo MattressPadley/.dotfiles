@@ -141,7 +141,7 @@ else
 
             echo "Opening VS Code on $return_host via Remote SSH..."
             ssh -o ConnectTimeout=5 -o PermitLocalCommand=no "$USER@$return_host" \
-                "code --remote ssh-remote+${USER}@${server_host} ${project_path}" &
+                "/usr/local/bin/code --remote ssh-remote+${USER}@${server_host} ${project_path}" &
         else
             code "$project_path" &
         fi

@@ -59,7 +59,7 @@ function c() {
         local abs_path=$(cd "$target" 2>/dev/null && pwd || echo "$target")
         local server_host=$(hostname)
         ssh -o ConnectTimeout=5 -o PermitLocalCommand=no "$USER@$return_host" \
-            "code --remote ssh-remote+${USER}@${server_host} ${abs_path}" &
+            "/usr/local/bin/code --remote ssh-remote+${USER}@${server_host} ${abs_path}" &
     else
         code "$target"
     fi
