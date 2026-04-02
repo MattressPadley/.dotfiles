@@ -1,6 +1,22 @@
 #!/bin/bash
 
-if [ "$1" = "cd" ]; then
+if [ "$1" = "code" ]; then
+    # Open VS Code for a project (with SSH reverse support)
+    dir=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive -x echo {/} | sort | \
+        fzf --preview 'eza --tree --level 1 --color=always ~/Dev/{} | head -200')
+
+    if [[ -n "$dir" ]]; then
+        project_path="$HOME/Dev/$dir"
+        return_host=$(cat ~/.dev_return_host 2>/dev/null)
+        if [ -n "$SSH_CLIENT" ] && [ -n "$return_host" ]; then
+            server_host=$(hostname)
+            ssh -o ConnectTimeout=5 -o PermitLocalCommand=no "$USER@$return_host" \
+                "/usr/local/bin/code --remote ssh-remote+${USER}@${server_host} ${project_path}" &
+        else
+            code "$project_path"
+        fi
+    fi
+elif [ "$1" = "cd" ]; then
     # Directory navigation functionality (original default behavior)
     dir=$(fd . ~/Dev --type d --max-depth 1 --exclude .git --exclude Z_Archive -x echo {/} | sort | \
         fzf --preview 'eza --tree --level 1 --color=always ~/Dev/{} | head -200')
