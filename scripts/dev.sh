@@ -132,43 +132,41 @@ else
         # Sanitize directory name for tmux session name (replace special chars with underscore)
         session_name=$(echo "$dir" | sed 's/[^a-zA-Z0-9_-]/_/g')
         project_path="$HOME/Dev/$dir"
-        
+
+        # Open VS Code for the project
+        if [ -n "$SSH_CLIENT" ]; then
+            # We're in an SSH session — open VS Code on the client via reverse SSH
+            client_ip=$(echo "$SSH_CLIENT" | awk '{print $1}')
+            server_ip=$(echo "$SSH_CONNECTION" | awk '{print $3}')
+
+            echo "Opening VS Code on client ($client_ip) via Remote SSH..."
+            ssh -o ConnectTimeout=5 "$USER@$client_ip" \
+                "code --remote ssh-remote+${USER}@${server_ip} ${project_path}" &
+        else
+            code "$project_path" &
+        fi
+
         # Check if tmux session exists
         if tmux has-session -t "$session_name" 2>/dev/null; then
             # Session exists
             if [ -n "$TMUX" ]; then
-                # We're already in tmux, switch to the session
                 tmux switch-client -t "$session_name"
             else
-                # Not in tmux, attach to the session
                 tmux attach-session -t "$session_name"
             fi
         else
             # Get terminal dimensions
             COLS=$(tput cols)
             LINES=$(tput lines)
-            
-            # Create new session with specific dimensions
+
+            # Create new session with claude
             tmux new-session -d -s "$session_name" -c "$project_path" -x "$COLS" -y "$LINES"
-            
-            # Split window vertically with right pane at 33%
-            tmux split-window -h -t "$session_name:0" -c "$project_path" -p 33
-            
-            # Start vi in the left pane (67% width)
-            tmux send-keys -t "$session_name:0.0" 'vi' Enter
-            
-            # Start claude in the right pane (33% width)
-            tmux send-keys -t "$session_name:0.1" 'claude' Enter
-            
-            # Select left pane as active
-            tmux select-pane -t "$session_name:0.0"
-            
+            tmux send-keys -t "$session_name:0.0" 'claude' Enter
+
             # Attach to or switch to the session
             if [ -n "$TMUX" ]; then
-                # We're already in tmux, switch to the new session
                 tmux switch-client -t "$session_name"
             else
-                # Not in tmux, attach to the session
                 tmux attach-session -t "$session_name"
             fi
         fi

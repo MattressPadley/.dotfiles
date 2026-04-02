@@ -52,7 +52,18 @@ alias vim="nvim"
 alias py="python3"
 alias z="zed"
 alias y="yazi"
-alias c="code ."
+function c() {
+    local target="${1:-.}"
+    if [ -n "$SSH_CLIENT" ]; then
+        local client_ip=$(echo "$SSH_CLIENT" | awk '{print $1}')
+        local server_ip=$(echo "$SSH_CONNECTION" | awk '{print $3}')
+        local abs_path=$(cd "$target" 2>/dev/null && pwd || echo "$target")
+        ssh -o ConnectTimeout=5 "$USER@$client_ip" \
+            "code --remote ssh-remote+${USER}@${server_ip} ${abs_path}" &
+    else
+        code "$target"
+    fi
+}
 alias lg="lazygit"
 alias ld="lazydocker"
 alias icloud="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/"
