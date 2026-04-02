@@ -54,12 +54,12 @@ alias z="zed"
 alias y="yazi"
 function c() {
     local target="${1:-.}"
-    if [ -n "$SSH_CLIENT" ]; then
-        local client_ip=$(echo "$SSH_CLIENT" | awk '{print $1}')
-        local server_ip=$(echo "$SSH_CONNECTION" | awk '{print $3}')
+    local return_host=$(cat ~/.dev_return_host 2>/dev/null)
+    if [ -n "$SSH_CLIENT" ] && [ -n "$return_host" ]; then
         local abs_path=$(cd "$target" 2>/dev/null && pwd || echo "$target")
-        ssh -o ConnectTimeout=5 "$USER@$client_ip" \
-            "code --remote ssh-remote+${USER}@${server_ip} ${abs_path}" &
+        local server_host=$(hostname)
+        ssh -o ConnectTimeout=5 -o PermitLocalCommand=no "$USER@$return_host" \
+            "code --remote ssh-remote+${USER}@${server_host} ${abs_path}" &
     else
         code "$target"
     fi

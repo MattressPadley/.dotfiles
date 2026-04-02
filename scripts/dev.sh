@@ -134,14 +134,14 @@ else
         project_path="$HOME/Dev/$dir"
 
         # Open VS Code for the project
-        if [ -n "$SSH_CLIENT" ]; then
+        return_host=$(cat ~/.dev_return_host 2>/dev/null)
+        if [ -n "$SSH_CLIENT" ] && [ -n "$return_host" ]; then
             # We're in an SSH session — open VS Code on the client via reverse SSH
-            client_ip=$(echo "$SSH_CLIENT" | awk '{print $1}')
-            server_ip=$(echo "$SSH_CONNECTION" | awk '{print $3}')
+            server_host=$(hostname)
 
-            echo "Opening VS Code on client ($client_ip) via Remote SSH..."
-            ssh -o ConnectTimeout=5 "$USER@$client_ip" \
-                "code --remote ssh-remote+${USER}@${server_ip} ${project_path}" &
+            echo "Opening VS Code on $return_host via Remote SSH..."
+            ssh -o ConnectTimeout=5 -o PermitLocalCommand=no "$USER@$return_host" \
+                "code --remote ssh-remote+${USER}@${server_host} ${project_path}" &
         else
             code "$project_path" &
         fi
